@@ -5,12 +5,12 @@
  *
  * You can add an optional custom header image to header.php like so ...
 
-	<?php $header_image = get_header_image();
-	if ( ! empty( $header_image ) ) { ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-		</a>
-	<?php } // if ( ! empty( $header_image ) ) ?>
+			<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) { ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+			</a>
+		<?php } // if ( ! empty( $header_image ) ) ?>
 
  *
  * @package _s
@@ -28,9 +28,9 @@
 function _s_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( '_s_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000',
+		'default-text-color'     => 'fff',
 		'width'                  => 1000,
-		'height'                 => 250,
+		'height'                 => 500,
 		'flex-height'            => true,
 		'wp-head-callback'       => '_s_header_style',
 		'admin-head-callback'    => '_s_admin_header_style',
@@ -70,7 +70,8 @@ function _s_header_style() {
 		else :
 	?>
 		.site-title a,
-		.site-description {
+		.site-description,
+		.main-navigation {
 			color: #<?php echo $header_text_color; ?>;
 		}
 	<?php endif; ?>

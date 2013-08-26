@@ -35,7 +35,6 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
   border: 0;
   font-family: inherit;
-  font-size: 100%;
   font-style: inherit;
   font-weight: inherit;
   margin: 0;
@@ -761,7 +760,7 @@ object {
 }
 
 @media screen {
-  /* line 19, ../scss/_global.scss */
+  /* line 20, ../scss/_global.scss */
   * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -773,70 +772,260 @@ object {
     font-size: 62.5%;
   }
 
-  /* line 25, ../scss/_global.scss */
+  /* line 26, ../scss/_global.scss */
   h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+    font-family: "Milonga", cursive;
   }
 
-  /* line 29, ../scss/_global.scss */
+  /* line 31, ../scss/_global.scss */
   body {
     font: 1.4rem Helvetica, Arial, sans-serif;
     *font-size: small;
     /* hack retained to preserve specificity */
     color: #444;
-    min-width: 320px;
+    min-width: 340px;
     margin: 0 auto;
   }
 }
-/* line 40, ../scss/style.scss */
-#excerpt {
-  border: 1px solid #cccccc;
-  padding: 1em;
-  background: none repeat scroll 0 0 #6b7077;
-  font-size: 1em;
-  line-height: 1.5em;
+/* Images */
+/* line 40, ../scss/_global.scss */
+img {
+  max-width: 97.5%;
+  /* Fluid images for posts, comments, and widgets */
+  height: auto;
+}
+/* line 43, ../scss/_global.scss */
+img[class*="align"], img[class*="wp-image-"] {
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+/* line 46, ../scss/_global.scss */
+img.size-full {
+  max-width: 97.5%;
+  width: auto;
+  /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+/* line 50, ../scss/_global.scss */
+img.tiny-logo {
+  position: absolute;
+  top: -30px;
+  width: 34px;
 }
 
-/* line 49, ../scss/style.scss */
-.panel {
+/* line 31, ../scss/style.scss */
+body header {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+}
+/* line 35, ../scss/style.scss */
+body header .header-overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 45, ../scss/style.scss */
+body header nav.main-navigation {
+  text-align: right;
+  float: right;
+  width: auto;
+  margin: 0 1.5rem;
+}
+/* line 50, ../scss/style.scss */
+body header nav.main-navigation ul.nav-menu {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 52, ../scss/style.scss */
+body header nav.main-navigation ul.nav-menu > li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: right;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+/* line 48, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+body header nav.main-navigation ul.nav-menu > li:first-child, body header nav.main-navigation ul.nav-menu > li.first {
+  padding-right: 0;
+}
+/* line 49, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+body header nav.main-navigation ul.nav-menu > li:last-child {
+  padding-left: 0;
+}
+/* line 50, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+body header nav.main-navigation ul.nav-menu > li.last {
+  padding-left: 0;
+}
+/* line 59, ../scss/style.scss */
+body header .site-branding {
+  position: absolute;
+  bottom: 4rem;
+  margin: 1.5rem;
+  text-align: center;
+}
+/* line 64, ../scss/style.scss */
+body header .site-branding h1, body header .site-branding h2 {
+  text-shadow: 1px 1px 10px #777777 0px 1px #aaaaaa;
+}
+/* line 68, ../scss/style.scss */
+body header .site-branding h1 {
+  font-size: 4rem;
+}
+/* line 70, ../scss/style.scss */
+body header .site-branding h1 a {
+  text-decoration: none;
+}
+/* line 74, ../scss/style.scss */
+body header .site-branding h2 {
+  font-size: 2rem;
+}
+/* line 83, ../scss/style.scss */
+body #primary {
+  margin-bottom: 1rem;
+}
+/* line 86, ../scss/style.scss */
+body #primary main {
+  position: relative;
+  padding: 0 1em;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 1;
+  margin-bottom: 21rem;
+  /*footer:bottom + #secondary:bottom*/
+  -webkit-box-shadow: 0 2rem 1.5rem 0.5rem rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0 2rem 1.5rem 0.5rem rgba(51, 51, 51, 0.5);
+  box-shadow: 0 2rem 1.5rem 0.5rem rgba(51, 51, 51, 0.5);
+}
+/* line 97, ../scss/style.scss */
+body #secondary.widget-area, body footer.site-footer {
+  position: fixed;
+  max-height: 18rem;
+  width: 100%;
+  bottom: 2em;
+  left: 0;
+  padding-top: 1rem;
+}
+/* line 105, ../scss/style.scss */
+body #secondary.widget-area aside, body footer.site-footer aside {
+  float: left;
+}
+/* line 107, ../scss/style.scss */
+body #secondary.widget-area aside#search, body footer.site-footer aside#search {
+  width: 100%;
+  clear: both;
+}
+/* line 114, ../scss/style.scss */
+body footer.site-footer {
+  bottom: 1em;
+}
+
+/* line 123, ../scss/style.scss */
+body.home article, body.gallery img {
+  width: 45%;
+  min-width: 15rem;
+  margin: 1%;
+  position: relative;
+  float: left;
+  z-index: 2;
+}
+@media (min-width: 60rem) {
+  /* line 123, ../scss/style.scss */
+  body.home article, body.gallery img {
+    width: 30%;
+  }
+}
+
+/* line 138, ../scss/style.scss */
+body.home #primary
+main.site-main {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0 !important;
+}
+/* line 142, ../scss/style.scss */
+body.home #primary
+main.site-main article h1 {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1em;
+  font-size: 3rem;
+  position: relative;
+  top: 30%;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+/* line 151, ../scss/style.scss */
+body.home #primary
+main.site-main article #excerpt {
+  padding: 1em;
+  background: none repeat scroll 0 0 #6b7077;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+/* line 160, ../scss/style.scss */
+body.home #primary
+main.site-main .panel {
+  display: block;
   width: 100%;
   height: 100%;
   font-size: 1rem;
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
 }
-/* line 56, ../scss/style.scss */
-.panel:hover .front {
+/* line 167, ../scss/style.scss */
+body.home #primary
+main.site-main .panel .front, body.home #primary
+main.site-main .panel .back {
+  border: 1px solid #444444;
+}
+/* line 171, ../scss/style.scss */
+body.home #primary
+main.site-main .panel:hover .front {
   z-index: 900;
   background: none repeat scroll 0 0 #333333;
-  border-color: #eeeeee;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 64, ../scss/style.scss */
-.panel:hover .back {
+/* line 178, ../scss/style.scss */
+body.home #primary
+main.site-main .panel:hover .back {
   z-index: 1000;
   background: none repeat scroll 0 0 #80868d;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
   -webkit-transform: rotateX(0deg) rotateY(0deg);
   -moz-transform: rotateX(0deg) rotateY(0deg);
 }
-/* line 73, ../scss/style.scss */
-.panel .front h2, .panel .back h2 {
-  padding: 0 0.3rem;
-  text-align: center;
-  vertical-align: center;
+/* line 186, ../scss/style.scss */
+body.home #primary
+main.site-main .panel a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
 }
-/* line 79, ../scss/style.scss */
-.panel .front {
+/* line 190, ../scss/style.scss */
+body.home #primary
+main.site-main .panel a:hover {
+  color: inherit;
+}
+/* line 195, ../scss/style.scss */
+body.home #primary
+main.site-main .panel .front {
   position: absolute;
   float: none;
   left: 0;
   top: 0;
   z-index: 900;
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   background: none repeat scroll 0 0 #6b7077;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -852,14 +1041,16 @@ object {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 103, ../scss/style.scss */
-.panel .front img {
+/* line 219, ../scss/style.scss */
+body.home #primary
+main.site-main .panel .front img {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
-/* line 109, ../scss/style.scss */
-.panel .back {
+/* line 225, ../scss/style.scss */
+body.home #primary
+main.site-main .panel .back {
   left: 0;
   top: 0;
   z-index: 800;
@@ -868,7 +1059,6 @@ object {
   width: inherit;
   border: 1px solid #cccccc;
   background: none repeat scroll 0 0 #333333;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
   -moz-backface-visibility: hidden;
   -moz-transform: rotateY(-180deg);
   -moz-transform-style: preserve-3d;
@@ -878,8 +1068,9 @@ object {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 130, ../scss/style.scss */
-.panel.flip .front {
+/* line 246, ../scss/style.scss */
+body.home #primary
+main.site-main .panel.flip .front {
   z-index: 900;
   background: none repeat scroll 0 0 #333333;
   border-color: #eeeeee;
@@ -887,11 +1078,67 @@ object {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 138, ../scss/style.scss */
-.panel.flip .back {
+/* line 254, ../scss/style.scss */
+body.home #primary
+main.site-main .panel.flip .back {
   z-index: 1000;
   background: none repeat scroll 0 0 #80868d;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
   -webkit-transform: rotateX(0deg) rotateY(0deg);
   -moz-transform: rotateX(0deg) rotateY(0deg);
 }
+
+/**** Isotope Filtering ****/
+/* line 267, ../scss/style.scss */
+.isotope-item {
+  z-index: 2;
+}
+
+/* line 271, ../scss/style.scss */
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+/* line 279, ../scss/style.scss */
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+
+/* line 287, ../scss/style.scss */
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+
+/* line 295, ../scss/style.scss */
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+/* line 307, ../scss/style.scss */
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+
+/*** End Isotope ***/

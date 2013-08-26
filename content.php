@@ -4,6 +4,41 @@
  */
 ?>
 <?php if (is_home()):?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		
+		<div class="panel">
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
+			<div class="front">
+				<?php if ( has_post_thumbnail() ) {
+							//the_post_thumbnail();
+							//set_post_thumbnail_size( 200, 200, true );
+							
+							$post_image_id = get_post_thumbnail_id($post->ID);
+							if ($post_image_id) {
+								$thumbnail = wp_get_attachment_image_src( $post_image_id, 'featured', false);
+								if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+								echo '<div style="background:#666 url(\''.$thumbnail.'\') center center no-repeat scroll; background-size:cover; width:100%; height:100%;"></div>';
+							}
+							
+						}
+				else{
+					echo '<h1 class="entry-title">'.get_the_title().'</h1>';
+				}?>
+			</div>
+	
+			
+				<div id="excerpt" class="back">
+					<?php if ( !has_post_thumbnail() ) {
+						the_excerpt('excerpt'); 
+					}else{
+						echo '<h1 class="entry-title">'.get_the_title().'</h1>'; 
+					}?>
+				</div>
+			</a>
+		</div>
+		
+	</article>
+
 <?php else:?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
@@ -18,7 +53,7 @@
 
 	<?php if ( is_search() ): // Only display Excerpts for Search?>
 	<div class="entry-summary">
-		<?php the_post_thumbnail(); the_excerpt(); ?>
+		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
@@ -36,7 +71,7 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', '_s' ) );
+				$categories_liscdt = get_the_category_list( __( ', ', '_s' ) );
 				if ( $categories_list && _s_categorized_blog() ) :
 			?>
 			<span class="cat-links">

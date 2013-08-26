@@ -11,7 +11,7 @@
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
 function _s_page_menu_args( $args ) {
-	$args['show_home'] = true;
+	$args['show_home'] = false;
 	return $args;
 }
 add_filter( 'wp_page_menu_args', '_s_page_menu_args' );
@@ -69,7 +69,7 @@ function _s_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', '_s_wp_title', 10, 2 );
 
-/* WP Functions.me stuff */
+/****************************** WP Functions.me stuff *************************/
 // Enable thumbnails
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size(200, 200, true); // Normal post thumbnails
@@ -118,7 +118,7 @@ add_action('admin_head', 'wpfme_adminCSS');
 
 
 // Enable admin to set custom background images in 'appearance > background'
-add_custom_background();
+//add_custom_background();
 
 
 //change amount of posts on the search page - set here to 100
@@ -168,7 +168,7 @@ function wpfme_custom_excerpt_length( $length ) {
 	//the amount of words to return
 	return 20;
 }
-add_filter( 'excerpt_length', 'wpfme_custom_excerpt_length');
+//add_filter( 'excerpt_length', 'wpfme_custom_excerpt_length');
 
 
 // Call Googles HTML5 Shim, but only for users on old versions of IE
