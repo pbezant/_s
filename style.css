@@ -227,7 +227,7 @@ code, kbd, tt, var {
 
 /* line 149, ../scss/reset.scss */
 abbr, acronym {
-  border-bottom: 1px dotted #666666;
+  border-bottom: 1px dotted #666;
   cursor: help;
 }
 
@@ -318,8 +318,8 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid #cccccc;
-  border-color: #cccccc #cccccc #bbbbbb #cccccc;
+  border: 1px solid #ccc;
+  border-color: #ccc #ccc #bbb #ccc;
   border-radius: 3px;
   background: #e6e6e6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
@@ -331,7 +331,7 @@ input[type="submit"] {
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 1;
-  padding: 0.6em 1em 0.4em;
+  padding: .6em 1em .4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
@@ -340,7 +340,7 @@ button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  border-color: #cccccc #bbbbbb #aaaaaa #bbbbbb;
+  border-color: #ccc #bbb #aaa #bbb;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
@@ -353,7 +353,7 @@ button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-  border-color: #aaaaaa #bbbbbb #bbbbbb #bbbbbb;
+  border-color: #aaa #bbb #bbb #bbb;
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -398,7 +398,7 @@ input[type="password"],
 input[type="search"],
 textarea {
   color: #666;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-radius: 3px;
 }
 
@@ -649,7 +649,7 @@ a:active {
 
 /* line 484, ../scss/reset.scss */
 .wp-caption {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   margin-bottom: 1.5em;
   max-width: 100%;
 }
@@ -774,7 +774,7 @@ object {
 
   /* line 26, ../scss/_global.scss */
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Milonga", cursive;
+    font-family: 'Milonga', cursive;
   }
 
   /* line 31, ../scss/_global.scss */
@@ -855,15 +855,15 @@ body header nav.main-navigation ul.nav-menu > li {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-/* line 48, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 48, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 body header nav.main-navigation ul.nav-menu > li:first-child, body header nav.main-navigation ul.nav-menu > li.first {
   padding-right: 0;
 }
-/* line 49, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 49, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 body header nav.main-navigation ul.nav-menu > li:last-child {
   padding-left: 0;
 }
-/* line 50, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+/* line 50, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
 body header nav.main-navigation ul.nav-menu > li.last {
   padding-left: 0;
 }
@@ -1004,7 +1004,7 @@ main.site-main .panel {
 body.home #primary
 main.site-main .panel .front, body.home #primary
 main.site-main .panel .back {
-  border: 1px solid #444444;
+  border: 1px solid #444;
 }
 /* line 182, ../scss/style.scss */
 body.home #primary

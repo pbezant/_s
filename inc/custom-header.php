@@ -30,7 +30,7 @@ function _s_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => 'fff',
 		'width'                  => 1000,
-		'height'                 => 250,
+		'height'                 => 650,
 		'flex-height'            => true,
 		'wp-head-callback'       => '_s_header_style',
 		'admin-head-callback'    => '_s_admin_header_style',

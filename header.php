@@ -26,12 +26,12 @@
 		<header id="masthead" class="site-header" role="banner" 
 			style="
 				background:url(<?php header_image(); ?>) no-repeat fixed top center; 
-				background-size:cover; 
+				background-size:100% auto; 
 
 				<?php if (is_home()):?>
-					min-height:<?php echo (get_custom_header()->height)/10; ?>rem;
+					min-height:<?php echo (get_custom_header()->height)/10*0.5; ?>rem;
 				<?php else:?>
-					min-height:<?php echo (get_custom_header()->height)/10*0.75; ?>rem;
+					min-height:<?php echo (get_custom_header()->height)/10*0.35; ?>rem;
 				<?php endif;?>
 			">
 			<div class="header-overlay">
