@@ -1,0 +1,55 @@
+
+$blue : #ADD8E6;
+@import "compass";
+@import url("http://fonts.googleapis.com/css?family=Milonga");
+
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (min-width: 60rem) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width:60rem) { @content; }
+  }
+  @else if $point == small {
+    @media (min-width: 19.5em)  { @content; }
+  }
+}
+
+@media screen{
+  * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  html { 
+    font-size: 62.5%; 
+  }
+ 
+
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Milonga', cursive;
+  	//margin:0;
+  }
+
+  body{
+  	font:1.4rem Helvetica, Arial, sans-serif;
+  	*font-size:small; /* hack retained to preserve specificity */
+  	color: #444;
+  	min-width:340px;
+  	margin:0 auto;
+  }
+}
+/* Images */
+img{
+  max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
+  height:auto;
+  &[class*="align"], &[class*="wp-image-"]{
+    height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+  }
+  &.size-full{
+    max-width: 97.5%;
+    width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+  }
+  &.tiny-logo{
+    position:absolute;
+    top:-30px;
+    width:34px;
+  }
+}

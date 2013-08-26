@@ -29,9 +29,9 @@
 				background-size:cover; 
 
 				<?php if (is_home()):?>
-					min-height:<?php echo (get_custom_header()->height)/10*0.5; ?>rem;
+					min-height:<?php echo (get_custom_header()->height)/10; ?>rem;
 				<?php else:?>
-					min-height:<?php echo (get_custom_header()->height)/10*0.3; ?>rem;
+					min-height:<?php echo (get_custom_header()->height)/10*0.75; ?>rem;
 				<?php endif;?>
 			">
 			<div class="header-overlay">
