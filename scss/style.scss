@@ -51,6 +51,9 @@ body{
 					@include horizontal-list-container;
 					> li{
 						@include horizontal-list-item(0.5rem, right);
+						a{
+							color: inherit;
+						}
 					}
 				}
 
@@ -68,6 +71,7 @@ body{
 			h1{
 				font-size: 4rem;
 				a{
+					color:none;
 					text-decoration: none;
 				}
 			}
@@ -147,12 +151,16 @@ body.home{
 				position:relative;
 				top:30%;
 				text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+				@include force-wrap;
 			}
 			#excerpt{
-				padding:1em;
+				padding:1em 0;
 				background: none repeat scroll 0 0 rgb(107, 112, 119);
 				font-size: 1.5rem;
 				line-height: 1.5em;
+				p{
+					padding:0 1em;
+				}
 			}
 
 		}

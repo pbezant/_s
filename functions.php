@@ -51,7 +51,7 @@ function _s_setup() {
 	/**
 	 * Enable support for Post Formats
 	 */
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	add_theme_support( 'post-formats', array( 'gallery', 'image', 'video', 'quote', 'link' ) );
 
 	/**
 	 * Setup the WordPress core custom background feature.

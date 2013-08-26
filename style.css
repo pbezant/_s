@@ -866,34 +866,39 @@ body header nav.main-navigation ul.nav-menu > li:last-child {
 body header nav.main-navigation ul.nav-menu > li.last {
   padding-left: 0;
 }
-/* line 59, ../scss/style.scss */
+/* line 54, ../scss/style.scss */
+body header nav.main-navigation ul.nav-menu > li a {
+  color: inherit;
+}
+/* line 62, ../scss/style.scss */
 body header .site-branding {
   position: absolute;
   bottom: 4rem;
   margin: 1.5rem;
   text-align: center;
 }
-/* line 64, ../scss/style.scss */
+/* line 67, ../scss/style.scss */
 body header .site-branding h1, body header .site-branding h2 {
   text-shadow: 1px 1px 10px #777777 0px 1px #aaaaaa;
 }
-/* line 68, ../scss/style.scss */
+/* line 71, ../scss/style.scss */
 body header .site-branding h1 {
   font-size: 4rem;
 }
-/* line 70, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
 body header .site-branding h1 a {
+  color: none;
   text-decoration: none;
 }
-/* line 74, ../scss/style.scss */
+/* line 78, ../scss/style.scss */
 body header .site-branding h2 {
   font-size: 2rem;
 }
-/* line 83, ../scss/style.scss */
+/* line 87, ../scss/style.scss */
 body #primary {
   margin-bottom: 1rem;
 }
-/* line 86, ../scss/style.scss */
+/* line 90, ../scss/style.scss */
 body #primary main {
   position: relative;
   padding: 0 1em;
@@ -906,7 +911,7 @@ body #primary main {
   -moz-box-shadow: 0 2rem 1.5rem 0.5rem rgba(51, 51, 51, 0.5);
   box-shadow: 0 2rem 1.5rem 0.5rem rgba(51, 51, 51, 0.5);
 }
-/* line 97, ../scss/style.scss */
+/* line 101, ../scss/style.scss */
 body #secondary.widget-area, body footer.site-footer {
   position: fixed;
   max-height: 18rem;
@@ -915,21 +920,21 @@ body #secondary.widget-area, body footer.site-footer {
   left: 0;
   padding-top: 1rem;
 }
-/* line 105, ../scss/style.scss */
+/* line 109, ../scss/style.scss */
 body #secondary.widget-area aside, body footer.site-footer aside {
   float: left;
 }
-/* line 107, ../scss/style.scss */
+/* line 111, ../scss/style.scss */
 body #secondary.widget-area aside#search, body footer.site-footer aside#search {
   width: 100%;
   clear: both;
 }
-/* line 114, ../scss/style.scss */
+/* line 118, ../scss/style.scss */
 body footer.site-footer {
   bottom: 1em;
 }
 
-/* line 123, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 body.home article, body.gallery img {
   width: 45%;
   min-width: 15rem;
@@ -939,19 +944,19 @@ body.home article, body.gallery img {
   z-index: 2;
 }
 @media (min-width: 60rem) {
-  /* line 123, ../scss/style.scss */
+  /* line 127, ../scss/style.scss */
   body.home article, body.gallery img {
     width: 30%;
   }
 }
 
-/* line 138, ../scss/style.scss */
+/* line 142, ../scss/style.scss */
 body.home #primary
 main.site-main {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0 !important;
 }
-/* line 142, ../scss/style.scss */
+/* line 146, ../scss/style.scss */
 body.home #primary
 main.site-main article h1 {
   text-align: center;
@@ -961,16 +966,29 @@ main.site-main article h1 {
   position: relative;
   top: 30%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
 }
-/* line 151, ../scss/style.scss */
+/* line 156, ../scss/style.scss */
 body.home #primary
 main.site-main article #excerpt {
-  padding: 1em;
+  padding: 1em 0;
   background: none repeat scroll 0 0 #6b7077;
   font-size: 1.5rem;
   line-height: 1.5em;
 }
-/* line 160, ../scss/style.scss */
+/* line 161, ../scss/style.scss */
+body.home #primary
+main.site-main article #excerpt p {
+  padding: 0 1em;
+}
+/* line 168, ../scss/style.scss */
 body.home #primary
 main.site-main .panel {
   display: block;
@@ -980,13 +998,13 @@ main.site-main .panel {
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
 }
-/* line 167, ../scss/style.scss */
+/* line 175, ../scss/style.scss */
 body.home #primary
 main.site-main .panel .front, body.home #primary
 main.site-main .panel .back {
   border: 1px solid #444444;
 }
-/* line 171, ../scss/style.scss */
+/* line 179, ../scss/style.scss */
 body.home #primary
 main.site-main .panel:hover .front {
   z-index: 900;
@@ -995,7 +1013,7 @@ main.site-main .panel:hover .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 178, ../scss/style.scss */
+/* line 186, ../scss/style.scss */
 body.home #primary
 main.site-main .panel:hover .back {
   z-index: 1000;
@@ -1004,19 +1022,19 @@ main.site-main .panel:hover .back {
   -webkit-transform: rotateX(0deg) rotateY(0deg);
   -moz-transform: rotateX(0deg) rotateY(0deg);
 }
-/* line 186, ../scss/style.scss */
+/* line 194, ../scss/style.scss */
 body.home #primary
 main.site-main .panel a {
   text-decoration: none;
   color: inherit;
   font: inherit;
 }
-/* line 190, ../scss/style.scss */
+/* line 198, ../scss/style.scss */
 body.home #primary
 main.site-main .panel a:hover {
   color: inherit;
 }
-/* line 195, ../scss/style.scss */
+/* line 203, ../scss/style.scss */
 body.home #primary
 main.site-main .panel .front {
   position: absolute;
@@ -1041,14 +1059,14 @@ main.site-main .panel .front {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 219, ../scss/style.scss */
+/* line 227, ../scss/style.scss */
 body.home #primary
 main.site-main .panel .front img {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
-/* line 225, ../scss/style.scss */
+/* line 233, ../scss/style.scss */
 body.home #primary
 main.site-main .panel .back {
   left: 0;
@@ -1068,7 +1086,7 @@ main.site-main .panel .back {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 246, ../scss/style.scss */
+/* line 254, ../scss/style.scss */
 body.home #primary
 main.site-main .panel.flip .front {
   z-index: 900;
@@ -1078,7 +1096,7 @@ main.site-main .panel.flip .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 254, ../scss/style.scss */
+/* line 262, ../scss/style.scss */
 body.home #primary
 main.site-main .panel.flip .back {
   z-index: 1000;
@@ -1089,19 +1107,19 @@ main.site-main .panel.flip .back {
 }
 
 /**** Isotope Filtering ****/
-/* line 267, ../scss/style.scss */
+/* line 275, ../scss/style.scss */
 .isotope-item {
   z-index: 2;
 }
 
-/* line 271, ../scss/style.scss */
+/* line 279, ../scss/style.scss */
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
 }
 
 /**** Isotope CSS3 transitions ****/
-/* line 279, ../scss/style.scss */
+/* line 287, ../scss/style.scss */
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
@@ -1111,7 +1129,7 @@ main.site-main .panel.flip .back {
   transition-duration: 0.8s;
 }
 
-/* line 287, ../scss/style.scss */
+/* line 295, ../scss/style.scss */
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
@@ -1120,7 +1138,7 @@ main.site-main .panel.flip .back {
   transition-property: height, width;
 }
 
-/* line 295, ../scss/style.scss */
+/* line 303, ../scss/style.scss */
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;
@@ -1130,7 +1148,7 @@ main.site-main .panel.flip .back {
 }
 
 /**** disabling Isotope CSS3 transitions ****/
-/* line 307, ../scss/style.scss */
+/* line 315, ../scss/style.scss */
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition {

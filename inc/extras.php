@@ -86,9 +86,6 @@ if ( ! isset( $content_width ) )
 $content_width = 660;
 
 
-// Add default posts and comments RSS feed links to head
-add_theme_support( 'automatic-feed-links' );
-
 
 // Put post thumbnails into rss feed
 function wpfme_feed_post_thumbnail($content) {
@@ -100,13 +97,6 @@ function wpfme_feed_post_thumbnail($content) {
 }
 add_filter('the_excerpt_rss', 'wpfme_feed_post_thumbnail');
 add_filter('the_content_feed', 'wpfme_feed_post_thumbnail');
-
-
-// Add custom menus
-register_nav_menus( array(
-	'primary' => __( 'Primary Navigation', 'wpfme' ),
-	//'example' => __( 'Example Navigation', 'wpfme' ),
-) );
 
 
 // Custom CSS for the whole admin area
