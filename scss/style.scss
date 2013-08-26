@@ -32,6 +32,7 @@ body{
 		position:relative;
 		width:100%;
 		padding:2rem 0;
+		z-index: 1;
 		.header-overlay{
 			background-color:rgba(0,0,0,0.25);
 			position:absolute;
