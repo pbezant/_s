@@ -760,24 +760,24 @@ object {
 }
 
 @media screen {
-  /* line 20, ../scss/_global.scss */
+  /* line 22, ../scss/_global.scss */
   * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
 
-  /* line 21, ../scss/_global.scss */
+  /* line 23, ../scss/_global.scss */
   html {
     font-size: 62.5%;
   }
 
-  /* line 26, ../scss/_global.scss */
+  /* line 28, ../scss/_global.scss */
   h1, h2, h3, h4, h5, h6 {
     font-family: "Milonga", cursive;
   }
 
-  /* line 31, ../scss/_global.scss */
+  /* line 33, ../scss/_global.scss */
   body {
     font: 1.4rem Helvetica, Arial, sans-serif;
     *font-size: small;
@@ -788,24 +788,24 @@ object {
   }
 }
 /* Images */
-/* line 40, ../scss/_global.scss */
+/* line 42, ../scss/_global.scss */
 img {
   max-width: 97.5%;
   /* Fluid images for posts, comments, and widgets */
   height: auto;
 }
-/* line 43, ../scss/_global.scss */
+/* line 45, ../scss/_global.scss */
 img[class*="align"], img[class*="wp-image-"] {
   height: auto;
   /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
-/* line 46, ../scss/_global.scss */
+/* line 48, ../scss/_global.scss */
 img.size-full {
   max-width: 97.5%;
   width: auto;
   /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
-/* line 50, ../scss/_global.scss */
+/* line 52, ../scss/_global.scss */
 img.tiny-logo {
   position: absolute;
   top: -30px;
