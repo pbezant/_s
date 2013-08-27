@@ -57,9 +57,9 @@ function _s_setup() {
 	 * Setup the WordPress core custom background feature.
 	 */
 	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
+		'default-color' => 'ffffff'
 	) ) );
+
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );

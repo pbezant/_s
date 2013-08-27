@@ -16,7 +16,12 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
-
+<?php
+	$main_background_color = get_option('main_background_color');
+?>
+<style>
+	#primary { background-color:  <?php echo $main_background_color; ?>; }
+</style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -26,12 +31,11 @@
 		<header id="masthead" class="site-header" role="banner" 
 			style="
 				background:url(<?php header_image(); ?>) no-repeat fixed top center; 
-				background-size:100% auto; 
-
+				background-size:cover; 
 				<?php if (is_home()):?>
 					min-height:<?php echo (get_custom_header()->height)/10*0.5; ?>rem;
 				<?php else:?>
-					min-height:<?php echo (get_custom_header()->height)/10*0.35; ?>rem;
+					min-height:<?php echo (get_custom_header()->height)/10*0.4; ?>rem;
 				<?php endif;?>
 			">
 			<div class="header-overlay">
