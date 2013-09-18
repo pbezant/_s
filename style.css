@@ -880,7 +880,7 @@ body header.site-header nav.main-navigation ul.nav-menu > li a {
 /* line 68, ../scss/style.scss */
 body header.site-header .site-branding {
   position: absolute;
-  bottom: 4rem;
+  bottom: 6rem;
   margin: 1.5rem;
   text-align: center;
 }
