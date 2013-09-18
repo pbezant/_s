@@ -778,6 +778,11 @@ object {
   }
 
   /* line 33, ../scss/_global.scss */
+  a:visited {
+    color: inherit;
+  }
+
+  /* line 37, ../scss/_global.scss */
   body {
     font: 1.4rem Helvetica, Arial, sans-serif;
     *font-size: small;
@@ -788,64 +793,65 @@ object {
   }
 }
 /* Images */
-/* line 42, ../scss/_global.scss */
+/* line 46, ../scss/_global.scss */
 img {
   max-width: 97.5%;
   /* Fluid images for posts, comments, and widgets */
   height: auto;
 }
-/* line 45, ../scss/_global.scss */
+/* line 49, ../scss/_global.scss */
 img[class*="align"], img[class*="wp-image-"] {
   height: auto;
   /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
-/* line 48, ../scss/_global.scss */
+/* line 52, ../scss/_global.scss */
 img.size-full {
   max-width: 97.5%;
   width: auto;
   /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
-/* line 52, ../scss/_global.scss */
+/* line 56, ../scss/_global.scss */
 img.tiny-logo {
   position: absolute;
   top: -30px;
   width: 34px;
 }
 
-/* line 31, ../scss/style.scss */
-body header {
-  position: relative;
+/* line 33, ../scss/style.scss */
+body header.site-header {
+  position: fixed;
+  max-height: 18rem;
   width: 100%;
-  padding: 2rem 0;
+  padding: 4rem 0;
   z-index: 1;
+  /*.header-overlay{
+  	background-color:rgba(0,0,0,0.25);
+  	position:absolute;
+  	top:0;
+  	left:0;
+  	display: block;
+  	width:100%;
+  	height: 100%;
+  }
+  */
 }
-/* line 36, ../scss/style.scss */
-body header .header-overlay {
-  background-color: rgba(0, 0, 0, 0.25);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-/* line 46, ../scss/style.scss */
-body header nav.main-navigation {
+/* line 51, ../scss/style.scss */
+body header.site-header nav.main-navigation {
   text-align: right;
   float: right;
   width: auto;
   margin: 0 1.5rem;
 }
-/* line 51, ../scss/style.scss */
-body header nav.main-navigation ul.nav-menu {
+/* line 56, ../scss/style.scss */
+body header.site-header nav.main-navigation ul.nav-menu {
   margin: 0;
   padding: 0;
   border: 0;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 53, ../scss/style.scss */
-body header nav.main-navigation ul.nav-menu > li {
+/* line 58, ../scss/style.scss */
+body header.site-header nav.main-navigation ul.nav-menu > li {
   list-style-image: none;
   list-style-type: none;
   margin-left: 0;
@@ -856,72 +862,73 @@ body header nav.main-navigation ul.nav-menu > li {
   padding-right: 0.5rem;
 }
 /* line 48, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-body header nav.main-navigation ul.nav-menu > li:first-child, body header nav.main-navigation ul.nav-menu > li.first {
+body header.site-header nav.main-navigation ul.nav-menu > li:first-child, body header.site-header nav.main-navigation ul.nav-menu > li.first {
   padding-right: 0;
 }
 /* line 49, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-body header nav.main-navigation ul.nav-menu > li:last-child {
+body header.site-header nav.main-navigation ul.nav-menu > li:last-child {
   padding-left: 0;
 }
 /* line 50, ../../../../../../../../var/lib/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
-body header nav.main-navigation ul.nav-menu > li.last {
+body header.site-header nav.main-navigation ul.nav-menu > li.last {
   padding-left: 0;
 }
-/* line 55, ../scss/style.scss */
-body header nav.main-navigation ul.nav-menu > li a {
+/* line 60, ../scss/style.scss */
+body header.site-header nav.main-navigation ul.nav-menu > li a {
   color: inherit;
 }
-/* line 63, ../scss/style.scss */
-body header .site-branding {
+/* line 68, ../scss/style.scss */
+body header.site-header .site-branding {
   position: absolute;
   bottom: 4rem;
   margin: 1.5rem;
   text-align: center;
 }
-/* line 68, ../scss/style.scss */
-body header .site-branding h1, body header .site-branding h2 {
+/* line 73, ../scss/style.scss */
+body header.site-header .site-branding h1, body header.site-header .site-branding h2 {
   text-shadow: 1px 1px 10px #777777 0px 1px #aaaaaa;
 }
-/* line 72, ../scss/style.scss */
-body header .site-branding h1 {
+/* line 77, ../scss/style.scss */
+body header.site-header .site-branding h1 {
   font-size: 4rem;
 }
-/* line 74, ../scss/style.scss */
-body header .site-branding h1 a {
+/* line 79, ../scss/style.scss */
+body header.site-header .site-branding h1 a {
   color: none;
   text-decoration: none;
 }
-/* line 79, ../scss/style.scss */
-body header .site-branding h2 {
+/* line 84, ../scss/style.scss */
+body header.site-header .site-branding h2 {
   font-size: 2rem;
 }
-/* line 88, ../scss/style.scss */
+/* line 92, ../scss/style.scss */
 body #primary {
   position: relative;
-  margin-bottom: 21rem;
+  margin: 21rem 0 18rem;
   /*footer:bottom + #secondary:bottom*/
-  -webkit-box-shadow: 0 2rem 1.5rem 0.5rem rgba(51, 51, 51, 0.5);
-  -moz-box-shadow: 0 2rem 1.5rem 0.5rem rgba(51, 51, 51, 0.5);
-  box-shadow: 0 2rem 1.5rem 0.5rem rgba(51, 51, 51, 0.5);
+  padding: 1rem 0;
+  -webkit-box-shadow: 0 0rem 1.5rem 1rem rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0 0rem 1.5rem 1rem rgba(51, 51, 51, 0.5);
+  box-shadow: 0 0rem 1.5rem 1rem rgba(51, 51, 51, 0.5);
   z-index: 1;
 }
-/* line 93, ../scss/style.scss */
+/* line 98, ../scss/style.scss */
 body #primary main {
   padding: 1em;
   width: 100%;
   min-height: 55rem;
 }
-/* line 97, ../scss/style.scss */
+/* line 102, ../scss/style.scss */
 body #primary main img {
   background: #fff;
 }
-/* line 101, ../scss/style.scss */
+/* line 106, ../scss/style.scss */
 body #primary main article, body #primary main nav.post-navigation, body #primary main #comments {
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 0.5em 1em;
+  padding: 1rem 1rem 0;
   color: #ddd;
 }
-/* line 111, ../scss/style.scss */
+/* line 116, ../scss/style.scss */
 body #secondary.widget-area, body footer.site-footer {
   position: fixed;
   max-height: 18rem;
@@ -930,45 +937,45 @@ body #secondary.widget-area, body footer.site-footer {
   left: 0;
   padding-top: 1rem;
 }
-/* line 118, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 body #secondary.widget-area aside, body footer.site-footer aside {
   float: left;
 }
-/* line 120, ../scss/style.scss */
+/* line 125, ../scss/style.scss */
 body #secondary.widget-area aside#search, body footer.site-footer aside#search {
   width: 100%;
   clear: both;
 }
-/* line 127, ../scss/style.scss */
+/* line 132, ../scss/style.scss */
 body footer.site-footer {
   bottom: 1em;
 }
 
-/* line 136, ../scss/style.scss */
+/* line 141, ../scss/style.scss */
 body.home article, body.gallery img {
   width: 45%;
   min-width: 15rem;
-  margin: 1%;
+  margin: 0.5%;
   position: relative;
   float: left;
   z-index: 2;
 }
 @media (min-width: 60rem) {
-  /* line 136, ../scss/style.scss */
+  /* line 141, ../scss/style.scss */
   body.home article, body.gallery img {
     width: 30%;
   }
 }
 
-/* line 151, ../scss/style.scss */
+/* line 156, ../scss/style.scss */
 body.home #primary main.site-main {
   padding: 0 !important;
 }
-/* line 154, ../scss/style.scss */
+/* line 159, ../scss/style.scss */
 body.home #primary main.site-main article {
   background-color: transparent;
 }
-/* line 156, ../scss/style.scss */
+/* line 161, ../scss/style.scss */
 body.home #primary main.site-main article h1 {
   text-align: center;
   vertical-align: middle;
@@ -986,18 +993,18 @@ body.home #primary main.site-main article h1 {
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
-/* line 166, ../scss/style.scss */
+/* line 171, ../scss/style.scss */
 body.home #primary main.site-main article #excerpt {
   padding: 1em 0;
   background: none repeat scroll 0 0 #6b7077;
   font-size: 1.5rem;
   line-height: 1.5em;
 }
-/* line 171, ../scss/style.scss */
+/* line 176, ../scss/style.scss */
 body.home #primary main.site-main article #excerpt p {
   padding: 0 1em;
 }
-/* line 179, ../scss/style.scss */
+/* line 184, ../scss/style.scss */
 body.home .panel {
   display: block;
   width: 100%;
@@ -1006,11 +1013,11 @@ body.home .panel {
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
 }
-/* line 186, ../scss/style.scss */
+/* line 191, ../scss/style.scss */
 body.home .panel .front, body.home .panel .back {
   border: 1px solid #444444;
 }
-/* line 190, ../scss/style.scss */
+/* line 195, ../scss/style.scss */
 body.home .panel:hover .front {
   z-index: 900;
   background: none repeat scroll 0 0 #333333;
@@ -1018,7 +1025,7 @@ body.home .panel:hover .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 197, ../scss/style.scss */
+/* line 202, ../scss/style.scss */
 body.home .panel:hover .back {
   z-index: 1000;
   background: none repeat scroll 0 0 #80868d;
@@ -1026,17 +1033,17 @@ body.home .panel:hover .back {
   -webkit-transform: rotateX(0deg) rotateY(0deg);
   -moz-transform: rotateX(0deg) rotateY(0deg);
 }
-/* line 205, ../scss/style.scss */
+/* line 210, ../scss/style.scss */
 body.home .panel a {
   text-decoration: none;
   color: inherit;
   font: inherit;
 }
-/* line 209, ../scss/style.scss */
+/* line 214, ../scss/style.scss */
 body.home .panel a:hover {
   color: inherit;
 }
-/* line 214, ../scss/style.scss */
+/* line 219, ../scss/style.scss */
 body.home .panel .front {
   position: absolute;
   float: none;
@@ -1060,13 +1067,13 @@ body.home .panel .front {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 238, ../scss/style.scss */
+/* line 243, ../scss/style.scss */
 body.home .panel .front img {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
-/* line 244, ../scss/style.scss */
+/* line 249, ../scss/style.scss */
 body.home .panel .back {
   left: 0;
   top: 0;
@@ -1085,7 +1092,7 @@ body.home .panel .back {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 265, ../scss/style.scss */
+/* line 270, ../scss/style.scss */
 body.home .panel.flip .front {
   z-index: 900;
   background: none repeat scroll 0 0 #333333;
@@ -1094,7 +1101,7 @@ body.home .panel.flip .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 273, ../scss/style.scss */
+/* line 278, ../scss/style.scss */
 body.home .panel.flip .back {
   z-index: 1000;
   background: none repeat scroll 0 0 #80868d;
@@ -1104,19 +1111,19 @@ body.home .panel.flip .back {
 }
 
 /**** Isotope Filtering ****/
-/* line 285, ../scss/style.scss */
+/* line 290, ../scss/style.scss */
 .isotope-item {
   z-index: 2;
 }
 
-/* line 289, ../scss/style.scss */
+/* line 294, ../scss/style.scss */
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
 }
 
 /**** Isotope CSS3 transitions ****/
-/* line 297, ../scss/style.scss */
+/* line 302, ../scss/style.scss */
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
@@ -1126,7 +1133,7 @@ body.home .panel.flip .back {
   transition-duration: 0.8s;
 }
 
-/* line 305, ../scss/style.scss */
+/* line 310, ../scss/style.scss */
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
@@ -1135,7 +1142,7 @@ body.home .panel.flip .back {
   transition-property: height, width;
 }
 
-/* line 313, ../scss/style.scss */
+/* line 318, ../scss/style.scss */
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;
@@ -1145,7 +1152,7 @@ body.home .panel.flip .back {
 }
 
 /**** disabling Isotope CSS3 transitions ****/
-/* line 325, ../scss/style.scss */
+/* line 330, ../scss/style.scss */
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition {

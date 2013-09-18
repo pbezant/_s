@@ -34,7 +34,7 @@
 			$container.isotope({
 		  		itemSelector : 'article',
 		  		masonry: {
-	    			columnWidth: 10
+	    			columnWidth: 1
 	  			}
 			});
 			$('#cat-nav ul a').click(function(){

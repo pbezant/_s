@@ -29,7 +29,11 @@ $yellow: #c1be00;
     font-family: 'Milonga', cursive;
   	//margin:0;
   }
-
+  a{
+    &:visited{
+      color:inherit;
+    }
+  }
   body{
   	font:1.4rem Helvetica, Arial, sans-serif;
   	*font-size:small; /* hack retained to preserve specificity */
