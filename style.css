@@ -819,21 +819,22 @@ img.tiny-logo {
 
 /* line 33, ../scss/style.scss */
 body header.site-header {
-  position: fixed;
   max-height: 18rem;
   width: 100%;
+  position: relative;
   padding: 4rem 0;
   z-index: 1;
-  /*.header-overlay{
-  	background-color:rgba(0,0,0,0.25);
-  	position:absolute;
-  	top:0;
-  	left:0;
-  	display: block;
-  	width:100%;
-  	height: 100%;
-  }
-  */
+}
+/* line 39, ../scss/style.scss */
+body header.site-header .header-overlay {
+  background: url('../images/noisy-texture.png?1379547914');
+  background-color: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 /* line 51, ../scss/style.scss */
 body header.site-header nav.main-navigation {
@@ -904,7 +905,7 @@ body header.site-header .site-branding h2 {
 /* line 92, ../scss/style.scss */
 body #primary {
   position: relative;
-  margin: 21rem 0 18rem;
+  margin-bottom: 21rem;
   /*footer:bottom + #secondary:bottom*/
   padding: 1rem 0;
   -webkit-box-shadow: 0 0rem 1.5rem 1rem rgba(51, 51, 51, 0.5);
@@ -930,6 +931,7 @@ body #primary main article, body #primary main nav.post-navigation, body #primar
 }
 /* line 116, ../scss/style.scss */
 body #secondary.widget-area, body footer.site-footer {
+  background: url('../images/noisy-texture.png?1379547914');
   position: fixed;
   max-height: 18rem;
   width: 100%;
@@ -937,21 +939,21 @@ body #secondary.widget-area, body footer.site-footer {
   left: 0;
   padding-top: 1rem;
 }
-/* line 123, ../scss/style.scss */
+/* line 125, ../scss/style.scss */
 body #secondary.widget-area aside, body footer.site-footer aside {
   float: left;
 }
-/* line 125, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 body #secondary.widget-area aside#search, body footer.site-footer aside#search {
   width: 100%;
   clear: both;
 }
-/* line 132, ../scss/style.scss */
+/* line 134, ../scss/style.scss */
 body footer.site-footer {
   bottom: 1em;
 }
 
-/* line 141, ../scss/style.scss */
+/* line 143, ../scss/style.scss */
 body.home article, body.gallery img {
   width: 45%;
   min-width: 15rem;
@@ -960,22 +962,16 @@ body.home article, body.gallery img {
   float: left;
   z-index: 2;
 }
-@media (min-width: 60rem) {
-  /* line 141, ../scss/style.scss */
-  body.home article, body.gallery img {
-    width: 30%;
-  }
-}
 
-/* line 156, ../scss/style.scss */
+/* line 158, ../scss/style.scss */
 body.home #primary main.site-main {
   padding: 0 !important;
 }
-/* line 159, ../scss/style.scss */
+/* line 161, ../scss/style.scss */
 body.home #primary main.site-main article {
   background-color: transparent;
 }
-/* line 161, ../scss/style.scss */
+/* line 163, ../scss/style.scss */
 body.home #primary main.site-main article h1 {
   text-align: center;
   vertical-align: middle;
@@ -993,18 +989,18 @@ body.home #primary main.site-main article h1 {
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
-/* line 171, ../scss/style.scss */
+/* line 173, ../scss/style.scss */
 body.home #primary main.site-main article #excerpt {
   padding: 1em 0;
   background: none repeat scroll 0 0 #6b7077;
   font-size: 1.5rem;
   line-height: 1.5em;
 }
-/* line 176, ../scss/style.scss */
+/* line 178, ../scss/style.scss */
 body.home #primary main.site-main article #excerpt p {
   padding: 0 1em;
 }
-/* line 184, ../scss/style.scss */
+/* line 186, ../scss/style.scss */
 body.home .panel {
   display: block;
   width: 100%;
@@ -1013,11 +1009,11 @@ body.home .panel {
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
 }
-/* line 191, ../scss/style.scss */
+/* line 193, ../scss/style.scss */
 body.home .panel .front, body.home .panel .back {
   border: 1px solid #444444;
 }
-/* line 195, ../scss/style.scss */
+/* line 197, ../scss/style.scss */
 body.home .panel:hover .front {
   z-index: 900;
   background: none repeat scroll 0 0 #333333;
@@ -1025,7 +1021,7 @@ body.home .panel:hover .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 202, ../scss/style.scss */
+/* line 204, ../scss/style.scss */
 body.home .panel:hover .back {
   z-index: 1000;
   background: none repeat scroll 0 0 #80868d;
@@ -1033,17 +1029,17 @@ body.home .panel:hover .back {
   -webkit-transform: rotateX(0deg) rotateY(0deg);
   -moz-transform: rotateX(0deg) rotateY(0deg);
 }
-/* line 210, ../scss/style.scss */
+/* line 212, ../scss/style.scss */
 body.home .panel a {
   text-decoration: none;
   color: inherit;
   font: inherit;
 }
-/* line 214, ../scss/style.scss */
+/* line 216, ../scss/style.scss */
 body.home .panel a:hover {
   color: inherit;
 }
-/* line 219, ../scss/style.scss */
+/* line 221, ../scss/style.scss */
 body.home .panel .front {
   position: absolute;
   float: none;
@@ -1067,13 +1063,13 @@ body.home .panel .front {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 243, ../scss/style.scss */
+/* line 245, ../scss/style.scss */
 body.home .panel .front img {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
-/* line 249, ../scss/style.scss */
+/* line 251, ../scss/style.scss */
 body.home .panel .back {
   left: 0;
   top: 0;
@@ -1092,7 +1088,7 @@ body.home .panel .back {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 270, ../scss/style.scss */
+/* line 272, ../scss/style.scss */
 body.home .panel.flip .front {
   z-index: 900;
   background: none repeat scroll 0 0 #333333;
@@ -1101,7 +1097,7 @@ body.home .panel.flip .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 278, ../scss/style.scss */
+/* line 280, ../scss/style.scss */
 body.home .panel.flip .back {
   z-index: 1000;
   background: none repeat scroll 0 0 #80868d;
@@ -1111,19 +1107,19 @@ body.home .panel.flip .back {
 }
 
 /**** Isotope Filtering ****/
-/* line 290, ../scss/style.scss */
+/* line 292, ../scss/style.scss */
 .isotope-item {
   z-index: 2;
 }
 
-/* line 294, ../scss/style.scss */
+/* line 296, ../scss/style.scss */
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
 }
 
 /**** Isotope CSS3 transitions ****/
-/* line 302, ../scss/style.scss */
+/* line 304, ../scss/style.scss */
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
@@ -1133,7 +1129,7 @@ body.home .panel.flip .back {
   transition-duration: 0.8s;
 }
 
-/* line 310, ../scss/style.scss */
+/* line 312, ../scss/style.scss */
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
@@ -1142,7 +1138,7 @@ body.home .panel.flip .back {
   transition-property: height, width;
 }
 
-/* line 318, ../scss/style.scss */
+/* line 320, ../scss/style.scss */
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;
@@ -1152,7 +1148,7 @@ body.home .panel.flip .back {
 }
 
 /**** disabling Isotope CSS3 transitions ****/
-/* line 330, ../scss/style.scss */
+/* line 332, ../scss/style.scss */
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition {

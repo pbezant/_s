@@ -32,11 +32,8 @@
 			style="
 				background:url(<?php header_image(); ?>) no-repeat fixed top center; 
 				background-size:cover; 
-				<?php if (is_home()):?>
-					min-height:<?php echo (get_custom_header()->height)/10*0.5; ?>rem;
-				<?php else:?>
-					min-height:<?php echo (get_custom_header()->height)/10*0.4; ?>rem;
-				<?php endif;?>
+				min-height:<?php echo (get_custom_header()->height)/10*0.5; ?>rem;
+				
 			">
 			<div class="header-overlay">
 			<nav id="site-navigation" class="main-navigation" role="navigation">

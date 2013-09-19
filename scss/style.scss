@@ -31,13 +31,13 @@ $footer-height: $header-height;
 body{
 
 	header.site-header{
-		position:fixed;
 		max-height: $footer-height;
 		width:100%;
-
+		position:relative;
 		padding:4rem 0;
 		z-index: 1;
-		/*.header-overlay{
+		.header-overlay{
+			@include background(image-url("noisy-texture.png"));
 			background-color:rgba(0,0,0,0.25);
 			position:absolute;
 			top:0;
@@ -46,7 +46,7 @@ body{
 			width:100%;
 			height: 100%;
 		}
-		*/	
+		
 		nav{
 			&.main-navigation{
 				text-align: right;
@@ -91,7 +91,7 @@ body{
 
 	#primary{
 		position: relative;
-		margin:$footer-height+3 0 $header-height;/*footer:bottom + #secondary:bottom*/
+		margin-bottom:$footer-height+3;/*footer:bottom + #secondary:bottom*/
 		padding:1rem 0;
 		@include single-box-shadow(rgba(51, 51, 51, 0.5), 0, 0rem, 1.5rem, 1rem, false);
 		z-index: 1;
@@ -114,12 +114,14 @@ body{
 	}
 
 	#secondary.widget-area, footer.site-footer{
+		@include background(image-url("noisy-texture.png"));
 		position:fixed;
 		max-height: $footer-height;
 		width:100%;
 		bottom:2em;
 		left:0;
 		padding-top:1rem;
+
 		aside{
 			float:left;
 			&#search{
@@ -147,7 +149,7 @@ body.home article, body.gallery img{
 	z-index: 2;
 
 	@include breakpoint(medium){
-		width:30%;
+		//width:30%;
 	}
 }
 //body.single-format-gallery

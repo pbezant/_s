@@ -28,7 +28,7 @@
 function _s_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( '_s_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => 'fff',
+		'default-text-color'     => '333',
 		'width'                  => 1000,
 		'height'                 => 500,
 		'flex-height'            => true,
