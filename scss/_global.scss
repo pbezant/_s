@@ -10,7 +10,7 @@ $yellow: #c1be00;
   @if $point == large {
     @media (min-width: 60rem) { @content; }
   }
-  @else if $point == medium {
+  @else if $point == medium { /* If you change the min-width be sure to change it in header.php above header block */
     @media (min-width:60rem) { @content; }
   }
   @else if $point == small {

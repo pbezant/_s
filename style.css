@@ -836,14 +836,19 @@ body header.site-header .header-overlay {
   width: 100%;
   height: 100%;
 }
-/* line 51, ../scss/style.scss */
+/* line 50, ../scss/style.scss */
+body header.site-header nav {
+  position: fixed;
+  right: 1px;
+}
+/* line 53, ../scss/style.scss */
 body header.site-header nav.main-navigation {
   text-align: right;
   float: right;
   width: auto;
   margin: 0 1.5rem;
 }
-/* line 56, ../scss/style.scss */
+/* line 58, ../scss/style.scss */
 body header.site-header nav.main-navigation ul.nav-menu {
   margin: 0;
   padding: 0;
@@ -851,7 +856,7 @@ body header.site-header nav.main-navigation ul.nav-menu {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 58, ../scss/style.scss */
+/* line 60, ../scss/style.scss */
 body header.site-header nav.main-navigation ul.nav-menu > li {
   list-style-image: none;
   list-style-type: none;
@@ -874,62 +879,80 @@ body header.site-header nav.main-navigation ul.nav-menu > li:last-child {
 body header.site-header nav.main-navigation ul.nav-menu > li.last {
   padding-left: 0;
 }
-/* line 60, ../scss/style.scss */
+/* line 62, ../scss/style.scss */
 body header.site-header nav.main-navigation ul.nav-menu > li a {
   color: inherit;
 }
-/* line 68, ../scss/style.scss */
+/* line 70, ../scss/style.scss */
 body header.site-header .site-branding {
-  position: absolute;
-  bottom: 6rem;
-  margin: 1.5rem;
-  text-align: center;
+  position: fixed;
+  float: left;
+  /* If you change the min-width be sure to change it in header.php above header block */
 }
 /* line 73, ../scss/style.scss */
 body header.site-header .site-branding h1, body header.site-header .site-branding h2 {
   text-shadow: 1px 1px 10px #777777 0px 1px #aaaaaa;
 }
-/* line 77, ../scss/style.scss */
+/* line 76, ../scss/style.scss */
 body header.site-header .site-branding h1 {
-  font-size: 4rem;
+  font-size: 2.2rem;
 }
-/* line 79, ../scss/style.scss */
+/* line 78, ../scss/style.scss */
 body header.site-header .site-branding h1 a {
   color: none;
   text-decoration: none;
 }
-/* line 84, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 body header.site-header .site-branding h2 {
-  font-size: 2rem;
+  display: none;
 }
-/* line 92, ../scss/style.scss */
+@media (min-width: 60rem) {
+  /* line 70, ../scss/style.scss */
+  body header.site-header .site-branding {
+    position: absolute;
+    top: 6rem;
+    margin: 1.5rem;
+    text-align: center;
+  }
+  /* line 91, ../scss/style.scss */
+  body header.site-header .site-branding h1 {
+    font-size: 4rem;
+  }
+  /* line 94, ../scss/style.scss */
+  body header.site-header .site-branding h2 {
+    display: block;
+    font-size: 2rem;
+  }
+}
+/* line 102, ../scss/style.scss */
 body #primary {
   position: relative;
   margin-bottom: 21rem;
   /*footer:bottom + #secondary:bottom*/
   padding: 1rem 0;
+  background-color: #eee;
   -webkit-box-shadow: 0 0rem 1.5rem 1rem rgba(51, 51, 51, 0.5);
   -moz-box-shadow: 0 0rem 1.5rem 1rem rgba(51, 51, 51, 0.5);
   box-shadow: 0 0rem 1.5rem 1rem rgba(51, 51, 51, 0.5);
   z-index: 1;
 }
-/* line 98, ../scss/style.scss */
+/* line 109, ../scss/style.scss */
 body #primary main {
   padding: 1em;
   width: 100%;
   min-height: 55rem;
 }
-/* line 102, ../scss/style.scss */
+/* line 113, ../scss/style.scss */
 body #primary main img {
   background: #fff;
 }
-/* line 106, ../scss/style.scss */
+/* line 117, ../scss/style.scss */
 body #primary main article, body #primary main nav.post-navigation, body #primary main #comments {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 1rem 1rem 0;
   color: #ddd;
 }
-/* line 116, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 body #secondary.widget-area, body footer.site-footer {
   background: url('../images/noisy-texture.png?1379547914');
   position: fixed;
@@ -939,21 +962,21 @@ body #secondary.widget-area, body footer.site-footer {
   left: 0;
   padding-top: 1rem;
 }
-/* line 125, ../scss/style.scss */
+/* line 136, ../scss/style.scss */
 body #secondary.widget-area aside, body footer.site-footer aside {
   float: left;
 }
-/* line 127, ../scss/style.scss */
+/* line 138, ../scss/style.scss */
 body #secondary.widget-area aside#search, body footer.site-footer aside#search {
   width: 100%;
   clear: both;
 }
-/* line 134, ../scss/style.scss */
+/* line 145, ../scss/style.scss */
 body footer.site-footer {
   bottom: 1em;
 }
 
-/* line 143, ../scss/style.scss */
+/* line 154, ../scss/style.scss */
 body.home article, body.gallery img {
   width: 45%;
   min-width: 15rem;
@@ -961,17 +984,24 @@ body.home article, body.gallery img {
   position: relative;
   float: left;
   z-index: 2;
+  /* If you change the min-width be sure to change it in header.php above header block */
 }
 
-/* line 158, ../scss/style.scss */
+/* line 169, ../scss/style.scss */
 body.home #primary main.site-main {
   padding: 0 !important;
 }
-/* line 161, ../scss/style.scss */
+/* line 172, ../scss/style.scss */
 body.home #primary main.site-main article {
-  background-color: transparent;
+  padding: 0 inherit;
+  background-color: #fff;
 }
-/* line 163, ../scss/style.scss */
+/* line 175, ../scss/style.scss */
+body.home #primary main.site-main article img {
+  display: block;
+  margin: 0.3rem;
+}
+/* line 179, ../scss/style.scss */
 body.home #primary main.site-main article h1 {
   text-align: center;
   vertical-align: middle;
@@ -989,18 +1019,20 @@ body.home #primary main.site-main article h1 {
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
-/* line 173, ../scss/style.scss */
+/* line 189, ../scss/style.scss */
 body.home #primary main.site-main article #excerpt {
   padding: 1em 0;
   background: none repeat scroll 0 0 #6b7077;
   font-size: 1.5rem;
   line-height: 1.5em;
+  height: 100%;
+  width: 100%;
 }
-/* line 178, ../scss/style.scss */
+/* line 196, ../scss/style.scss */
 body.home #primary main.site-main article #excerpt p {
   padding: 0 1em;
 }
-/* line 186, ../scss/style.scss */
+/* line 204, ../scss/style.scss */
 body.home .panel {
   display: block;
   width: 100%;
@@ -1009,11 +1041,11 @@ body.home .panel {
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
 }
-/* line 193, ../scss/style.scss */
+/* line 211, ../scss/style.scss */
 body.home .panel .front, body.home .panel .back {
   border: 1px solid #444444;
 }
-/* line 197, ../scss/style.scss */
+/* line 215, ../scss/style.scss */
 body.home .panel:hover .front {
   z-index: 900;
   background: none repeat scroll 0 0 #333333;
@@ -1021,7 +1053,7 @@ body.home .panel:hover .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 204, ../scss/style.scss */
+/* line 222, ../scss/style.scss */
 body.home .panel:hover .back {
   z-index: 1000;
   background: none repeat scroll 0 0 #80868d;
@@ -1029,25 +1061,25 @@ body.home .panel:hover .back {
   -webkit-transform: rotateX(0deg) rotateY(0deg);
   -moz-transform: rotateX(0deg) rotateY(0deg);
 }
-/* line 212, ../scss/style.scss */
+/* line 230, ../scss/style.scss */
 body.home .panel a {
   text-decoration: none;
   color: inherit;
   font: inherit;
 }
-/* line 216, ../scss/style.scss */
+/* line 234, ../scss/style.scss */
 body.home .panel a:hover {
   color: inherit;
 }
-/* line 221, ../scss/style.scss */
+/* line 239, ../scss/style.scss */
 body.home .panel .front {
-  position: absolute;
   float: none;
   left: 0;
   top: 0;
   z-index: 900;
   width: 100%;
   height: 100%;
+  max-height: 30rem;
   background: none repeat scroll 0 0 #6b7077;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1063,14 +1095,15 @@ body.home .panel .front {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 245, ../scss/style.scss */
+/* line 264, ../scss/style.scss */
 body.home .panel .front img {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
-/* line 251, ../scss/style.scss */
+/* line 270, ../scss/style.scss */
 body.home .panel .back {
+  position: absolute;
   left: 0;
   top: 0;
   z-index: 800;
@@ -1088,7 +1121,7 @@ body.home .panel .back {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all 0.4s ease-in-out 0s;
 }
-/* line 272, ../scss/style.scss */
+/* line 293, ../scss/style.scss */
 body.home .panel.flip .front {
   z-index: 900;
   background: none repeat scroll 0 0 #333333;
@@ -1097,7 +1130,7 @@ body.home .panel.flip .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
 }
-/* line 280, ../scss/style.scss */
+/* line 301, ../scss/style.scss */
 body.home .panel.flip .back {
   z-index: 1000;
   background: none repeat scroll 0 0 #80868d;
@@ -1107,19 +1140,19 @@ body.home .panel.flip .back {
 }
 
 /**** Isotope Filtering ****/
-/* line 292, ../scss/style.scss */
+/* line 313, ../scss/style.scss */
 .isotope-item {
   z-index: 2;
 }
 
-/* line 296, ../scss/style.scss */
+/* line 317, ../scss/style.scss */
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
 }
 
 /**** Isotope CSS3 transitions ****/
-/* line 304, ../scss/style.scss */
+/* line 325, ../scss/style.scss */
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
@@ -1129,7 +1162,7 @@ body.home .panel.flip .back {
   transition-duration: 0.8s;
 }
 
-/* line 312, ../scss/style.scss */
+/* line 333, ../scss/style.scss */
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
@@ -1138,7 +1171,7 @@ body.home .panel.flip .back {
   transition-property: height, width;
 }
 
-/* line 320, ../scss/style.scss */
+/* line 341, ../scss/style.scss */
 .isotope .isotope-item {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property: -moz-transform, opacity;
@@ -1148,7 +1181,7 @@ body.home .panel.flip .back {
 }
 
 /**** disabling Isotope CSS3 transitions ****/
-/* line 332, ../scss/style.scss */
+/* line 353, ../scss/style.scss */
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition {

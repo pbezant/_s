@@ -7,15 +7,19 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<div class="panel">
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
-			<div class="front">
+			
+			<div  class="front">
+
 				<?php if (has_post_thumbnail( $post->ID ) ): ?>
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'custombig' ); ?>
-					<div id="custom-bg" style="background: url('<?php echo $image[0]; ?>') center 33% no-repeat scroll; background-size:cover; width:100%; height:100%;"></div>
+					<img src="<?php echo $image[0]; ?>" id="custom-bg" />
+					<!-- <div id="custom-bg" style="background: url('<?php echo $image[0]; ?>') center 33% no-repeat scroll; background-size:cover; width:100%; height:100%;"></div> 
+				-->
 				<?php else: ?>
 					<h1 class="entry-title"><?php the_title();?></h1>
 				<?php endif;?>
 			</div>
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
 			<div id="excerpt" class="back">
 				<?php if ( !has_post_thumbnail() ) {
 					the_excerpt('excerpt'); 
@@ -23,6 +27,7 @@
 					echo '<h1 class="entry-title">'.get_the_title().'</h1>'; 
 				}?>
 			</div>
+			
 			</a>
 		</div>
 	</article>

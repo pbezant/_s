@@ -19,22 +19,26 @@
 <?php
 	$main_background_color = get_option('main_background_color');
 ?>
-<style>
+<!-- <style>
 	#primary { background-color:  <?php echo $main_background_color; ?>; }
 </style>
+-->
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	
-		<header id="masthead" class="site-header" role="banner" 
-			style="
+		<style>
+		@media (min-width:60rem){
+			header.site-header{
 				background:url(<?php header_image(); ?>) no-repeat fixed top center; 
 				background-size:cover; 
-				min-height:<?php echo (get_custom_header()->height)/10*0.5; ?>rem;
-				
-			">
+				min-height:<?php echo (get_custom_header()->height)/10*0.35; ?>rem;
+			}
+		}
+		
+		</style>
+		<header id="masthead" class="site-header" role="banner">
 			<div class="header-overlay">
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
