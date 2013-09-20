@@ -26,14 +26,11 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 		<style>
-		@media (min-width:60rem){
 			header.site-header{
 				background:url(<?php header_image(); ?>) no-repeat fixed top center; 
-				background-size:cover; 
+
 				/*min-height:<?php echo (get_custom_header()->height)/10*0.35; ?>rem;*/
 			}
-		}
-		
 		</style>
 		<header id="masthead" class="site-header" role="banner">
 			<div class="header-overlay">
