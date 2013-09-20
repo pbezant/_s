@@ -11,6 +11,7 @@ relative_assets = true
 environment = :development
 
 
+=begin
 require 'fileutils'
 on_stylesheet_saved do |file|
   if File.exists?(file) && File.basename(file) == "style.css"
@@ -18,3 +19,4 @@ on_stylesheet_saved do |file|
     FileUtils.mv(file, File.dirname(file) + "/../" + File.basename(file))
   end
 end
+=end

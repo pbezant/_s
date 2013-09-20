@@ -4,33 +4,32 @@
  */
 ?>
 <?php if (is_home()):?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		
-		<div class="panel">
-			
-			<div  class="front">
-
-				<?php if (has_post_thumbnail( $post->ID ) ): ?>
-					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'custombig' ); ?>
-					<img src="<?php echo $image[0]; ?>" id="custom-bg" />
-					<!-- <div id="custom-bg" style="background: url('<?php echo $image[0]; ?>') center 33% no-repeat scroll; background-size:cover; width:100%; height:100%;"></div> 
-				-->
-				<?php else: ?>
-					<h1 class="entry-title"><?php the_title();?></h1>
-				<?php endif;?>
-			</div>
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
-			<div id="excerpt" class="back">
-				<?php if ( !has_post_thumbnail() ) {
-					the_excerpt('excerpt'); 
-				}else{
-					echo '<h1 class="entry-title">'.get_the_title().'</h1>'; 
-				}?>
-			</div>
-			
-			</a>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class='flipper'>
+	<?php if (has_post_thumbnail( $post->ID )): ?>
+		<div id="excerpt" class="front">
+			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'custombig' ); ?>
+			<img src="<?php echo $image[0]; ?>" id="custom-bg" />
 		</div>
-	</article>
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
+		<div class="back">
+			<h1 class="entry-title"><?php the_title();?></h1>
+		</div></a>
+	<?php else: ?>
+		<div  class="front">
+			<h1 class="entry-title"><?php the_title();?></h1>
+		</div>
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
+		<div id="excerpt" class="back">
+			<?php the_excerpt('excerpt');?>
+		</div></a>
+		
+		
+	<?php endif; ?>
+	</div>
+		</div>
+</article>
 
 <?php else:?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -19,10 +19,7 @@
 <?php
 	$main_background_color = get_option('main_background_color');
 ?>
-<!-- <style>
-	#primary { background-color:  <?php echo $main_background_color; ?>; }
-</style>
--->
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -33,7 +30,7 @@
 			header.site-header{
 				background:url(<?php header_image(); ?>) no-repeat fixed top center; 
 				background-size:cover; 
-				min-height:<?php echo (get_custom_header()->height)/10*0.35; ?>rem;
+				/*min-height:<?php echo (get_custom_header()->height)/10*0.35; ?>rem;*/
 			}
 		}
 		

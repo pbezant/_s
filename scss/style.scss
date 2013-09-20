@@ -1,43 +1,21 @@
-/*!
-Theme Name: _p
-Theme URI: http://prestonbezant.com
-Author: pbezant
-Author URI: http://prestonbezant.com
-Description: 
-Version: 1.3-wpcom
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: _p
-Domain Path: /languages/
-Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
- _p is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
-*/
-
 
 @import "reset";
 @import "_global";
 
 $header-height: 18rem;
 $footer-height: $header-height;
+.header-overlay, #secondary.widget-area, footer.site-footer{
+		@include background(image-url("noisy-texture.png"));
+}
 body{
 
 	header.site-header{
-		max-height: $footer-height;
+		height: 3.5em;
 		width:100%;
-		position:relative;
-		padding:4rem 0;
-		z-index: 1;
+		position:fixed;
+		z-index: 2;
+
 		.header-overlay{
-			@include background(image-url("noisy-texture.png"));
 			background-color:rgba(0,0,0,0.25);
 			position:absolute;
 			top:0;
@@ -83,24 +61,14 @@ body{
 			h2{
 				display: none;
 			}
-			@include breakpoint(medium){
-				position: absolute;
-				top: 6rem;
-				margin:1.5rem;
-				text-align: center;
-				h1{
-					font-size: 4rem;
-				}
-				h2{
-					display: block;
-					font-size: 2rem;
-				}
-			}
+
 		}
+		
 	}
 
 	#primary{
 		position: relative;
+		margin-top: 5rem;
 		margin-bottom:$footer-height+3;/*footer:bottom + #secondary:bottom*/
 		padding:1rem 0;
 		background-color:#eee;
@@ -125,7 +93,6 @@ body{
 	}
 
 	#secondary.widget-area, footer.site-footer{
-		@include background(image-url("noisy-texture.png"));
 		position:fixed;
 		max-height: $footer-height;
 		width:100%;
@@ -147,12 +114,38 @@ body{
 
 		}
 	}
+	@include breakpoint(medium){
+		#page:not(.strip){
+			header.site-header{
+				position:relative;
+				z-index: 1;
+				min-height: 17rem;
+				.site-branding{
+					position: absolute;
+					top: 6rem;
+					margin:1.5rem;
+					text-align: center;
+					h1{
+						font-size: 4rem;
+					}
+					h2{
+						display: block;
+						font-size: 2rem;
+					}
+				}
+			}
+			#primary{
+				margin-top:0 !important;
+			}
+
+		}
+	}
 	
 }
 
 
 body.home article, body.gallery img{
-	width:45%;
+	max-width:48%;
 	min-width: 15rem;
 	margin:0.5%;
 	position: relative;
@@ -160,7 +153,7 @@ body.home article, body.gallery img{
 	z-index: 2;
 
 	@include breakpoint(medium){
-		//width:30%;
+		width:30%;
 	}
 }
 //body.single-format-gallery
@@ -171,142 +164,85 @@ body.home {
 			
 			article{
 				padding:0 inherit;
-				background-color:#fff;
-				img{
-					display: block;
-					margin:0.3rem;
-				}
+				background-color:transparent;
 				h1{
+
+					display: block;
+					margin:1.5rem 1rem;
 					text-align: center;
-					vertical-align: middle;
 					line-height: 1em;
 					font-size:3rem;
-					position:relative;
-					top:30%;
 					text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 					@include force-wrap;
 				}
+				.front,.back{
+					border:1px solid #333;
+					background-color:#777;
+					overflow: hidden;
+				}
 				#excerpt{
-					padding:1em 0;
-					background: none repeat scroll 0 0 rgb(107, 112, 119);
 					font-size: 1.5rem;
 					line-height: 1.5em;
-					height: 100%;
-					width: 100%;
+					img{
+						display: block;
+						width:100%;
+						margin:0 auto;
+					}
 					p{
-						padding:0 1em;
+						padding:0 1rem;
 					}
 				}
 
 			}
 		}
 	}
-		.panel{
-			display: block;
-			width: 100%;
-			height: 100%;
-			font-size: 1rem;
-			-webkit-perspective: 600px;
-		    -moz-perspective: 600px;
-		    .front, .back{
-		    	border:1px solid #444;
-		    }
-		    &:hover{
-		    	.front{
-		    		z-index: 900;   
-				    background: none repeat scroll 0 0 rgb(51, 51, 51);
-				    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-				    -webkit-transform: rotateY(180deg);
-				    -moz-transform: rotateY(180deg);
-		    	}
-		    	.back{
-					z-index: 1000;
-					background: none repeat scroll 0 0 rgb(128, 134, 141);
-				    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-				    -webkit-transform: rotateX(0deg) rotateY(0deg);
-				    -moz-transform: rotateX(0deg) rotateY(0deg);
-		    	}
-		    }
-		    a{
-				text-decoration:none;
-				color:inherit;
-				font:inherit;
-				&:hover{
-					color: inherit;
-				}
-
-			}
-		    .front {
-
-				float: none;
-			    left: 0;
-			    top: 0;
-			    z-index: 900;
-				width:100%;
-				height:100%;
-				max-height: 30rem;
-				background: none repeat scroll 0 0 rgb(107, 112, 119);
-				-moz-box-sizing:border-box;
-				-webkit-box-sizing:border-box;
-				-o-box-sizing:border-box;
-				box-sizing:border-box;
-				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
-				
-			    -moz-backface-visibility: hidden;
-			    -moz-transform: rotateX(0deg) rotateY(0deg);
-			    -moz-transform-style: preserve-3d;
-			    -moz-transition: all 0.4s ease-in-out 0s;
-
-			    -webkit-backface-visibility: hidden;
-			    -webkit-transform: rotateX(0deg) rotateY(0deg);
-			    -webkit-transform-style: preserve-3d;
-			    -webkit-transition: all 0.4s ease-in-out 0s;
-				img{
-					width:100%;
-					height:100%;
-					box-sizing:border-box;
-				}
-			} 
-			.back {
-				position: absolute;
-				left: 0;
-				top: 0;
-
-				z-index: 800;
-				float: none;
-			    height: inherit;
-			    width: inherit;
-			    border: 1px solid rgb(204, 204, 204);
-			    background: none repeat scroll 0 0 rgb(51, 51, 51);
-			   
-			    -moz-backface-visibility: hidden;
-			    -moz-transform: rotateY(-180deg);
-			    -moz-transform-style: preserve-3d;
-			    -moz-transition: all 0.4s ease-in-out 0s;
-			    
-			    -webkit-backface-visibility: hidden;
-			    -webkit-transform: rotateY(-180deg);
-			    -webkit-transform-style: preserve-3d;
-			    -webkit-transition: all 0.4s ease-in-out 0s;
-			}
-			&.flip{
-				.front{
-					z-index: 900;   
-				    background: none repeat scroll 0 0 rgb(51, 51, 51);
-				    border-color: rgb(238, 238, 238);
-				    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-				    -webkit-transform: rotateY(180deg);
-				    -moz-transform: rotateY(180deg);
-				}
-				.back {
-					z-index: 1000;
-					background: none repeat scroll 0 0 rgb(128, 134, 141);
-				    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-				    -webkit-transform: rotateX(0deg) rotateY(0deg);
-				    -moz-transform: rotateX(0deg) rotateY(0deg);
-				}
-			}
+}
+	/* entire container, keeps perspective */
+	.flip-container {
+		@include perspective(1000);
+	}
+		/* flip the pane when hovered */
+		.flip-container:hover .flipper, .flip-container.hover .flipper {
+			@include transform(rotateY(180deg));
 		}
+
+	.flip-container, .front, .back {
+		width: 100%;
+		height: 100%;
+	}
+	/* flip speed goes here */
+	.flipper {
+		transition: 0.6s;
+		@include transform-style(preserve-3d);
+		position: relative;
+	}
+	.front{
+		z-index: 2;
+	}
+	.back{
+		@include transform(rotateY(180deg)); /* back, initially hidden pane */
+	}
+	.back, .front{
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include backface-visibility(hidden);
+	}
+	a{
+		text-decoration:none;
+		color:inherit;
+		font:inherit;
+		&:hover{
+			color: inherit;
+		}
+
+	}
+	/* front pane, placed above back */
+	#excerpt {
+		display: block;
+		width:100%;
+		position: relative;
+		
 	}
 /**** Isotope Filtering ****/
 
