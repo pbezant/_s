@@ -16,7 +16,7 @@
 			<?php do_action( '_s_credits' ); ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_s' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), 'Preston Bezant', '<a href="http://prestonbezant.com" rel="designer">Preston Bezant</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_p', '<a href="http://prestonbezant.com" rel="designer">Preston Bezant</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

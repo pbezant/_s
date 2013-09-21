@@ -29,7 +29,7 @@ function _s_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( '_s_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '333',
-		'width'                  => 1000,
+		'width'                  => 1280,
 		'height'                 => 170,
 		'flex-height'            => true,
 		'wp-head-callback'       => '_s_header_style',

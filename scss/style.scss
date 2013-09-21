@@ -32,11 +32,13 @@ body{
 		nav{
 			position:fixed;
 			right: 1px;
+
 			&.main-navigation{
 				text-align: right;
 				float:right;
 				width:auto;
 				margin:0 1.5rem;
+				@include single-transition(all, 0.4s, linear);
 				ul.nav-menu{
 					@include horizontal-list-container;
 					> li{
@@ -183,9 +185,10 @@ body.home {
 				padding:0 inherit;
 				background-color:transparent;
 				h1{
-
+					position:absolute;
+					top:30%;
 					display: block;
-					margin:1.5rem 1rem;
+					width:100%;
 					text-align: center;
 					line-height: 1em;
 					font-size:3rem;

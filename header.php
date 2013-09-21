@@ -28,7 +28,7 @@
 		<style>
 			header.site-header{
 				background:url(<?php header_image(); ?>) no-repeat fixed top center; 
-
+				background-size: cover;
 				/*min-height:<?php echo (get_custom_header()->height)/10*0.35; ?>rem;*/
 			}
 		</style>

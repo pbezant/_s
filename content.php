@@ -9,8 +9,8 @@
 		<div class='flipper'>
 	<?php if (has_post_thumbnail( $post->ID )): ?>
 		<div id="excerpt" class="front">
-			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'custombig' ); ?>
-			<img src="<?php echo $image[0]; ?>" id="custom-bg" />
+
+			<?php echo get_the_post_thumbnail();?>
 		</div>
 			<a href="<?php the_permalink(); ?>" rel="bookmark">
 		<div class="back">
