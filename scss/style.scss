@@ -82,7 +82,7 @@ body{
 		
 		z-index: 1;
 		main{
-			padding:1em;
+			padding:1em 0;
 			width:100%;
 			min-height: 55rem;
 			img{
@@ -179,7 +179,6 @@ body.home article, body.gallery img{
 body.home {
 	#primary{
 		main.site-main{
-			padding:0 !important;
 			
 			article{
 				padding:0 inherit;
