@@ -72,7 +72,41 @@ body{
 		}
 		
 	}
+	#page{
+		&.strip{
+			.menu-toggle,
+			.main-navigation.toggled .nav-menu {
+				display: block;
+			}
 
+			.main-navigation ul {
+				display: none;
+			}
+		}
+		&:not(.strip){
+			header.site-header{
+				position:relative;
+				z-index: 1;
+				min-height: 17rem;
+				.site-branding{
+					position: absolute;
+					top: 6rem;
+					margin:1.5rem;
+					text-align: center;
+					h1{
+						font-size: 4rem;
+					}
+					h2{
+						display: block;
+						font-size: 2rem;
+					}
+				}
+			}
+			#primary{
+				margin-top:0 !important;
+			}
+		} 
+	}
 	#primary{
 		position: relative;
 		margin-top: 5rem;
@@ -84,7 +118,7 @@ body{
 		main{
 			padding:1em 0;
 			width:100%;
-			min-height: 55rem;
+			min-height: 26rem;
 			img{
 				background:#fff;
 			}
@@ -92,8 +126,13 @@ body{
 			article, nav.post-navigation, #comments{
 				//background-color:rgba(255, 255, 255, 0.8);
 				background-color:rgba(0,0,0,0.4);
-				padding:1rem 1rem 0;
+				padding:1rem 1rem;
 				color:#ddd;
+			}
+			#comments{
+				form.comment-form{
+					display: none;
+				}
 			}
 
 		}
@@ -121,58 +160,19 @@ body{
 
 		}
 	}
-	@include breakpoint(medium){
-		#page{
-			&.strip{
-				.menu-toggle,
-				.main-navigation.toggled .nav-menu {
-					display: block;
-				}
-
-				.main-navigation ul {
-					display: none;
-				}
-			}
-			&:not(.strip){
-				header.site-header{
-					position:relative;
-					z-index: 1;
-					min-height: 17rem;
-					.site-branding{
-						position: absolute;
-						top: 6rem;
-						margin:1.5rem;
-						text-align: center;
-						h1{
-							font-size: 4rem;
-						}
-						h2{
-							display: block;
-							font-size: 2rem;
-						}
-					}
-				}
-				#primary{
-					margin-top:0 !important;
-				}
-
-			}
-			
-		}
-		
-	}
 }
 
 body.home article, body.gallery img{
 	max-width:48%;
 	min-width: 15rem;
+	min-height:20rem;
 	margin:0.5%;
 	position: relative;
 	float:left;
 	z-index: 2;
 
 	@include breakpoint(medium){
-		width:30%;
+		width:31.5%;
 	}
 }
 //body.single-format-gallery

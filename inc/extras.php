@@ -72,14 +72,15 @@ add_filter( 'wp_title', '_s_wp_title', 10, 2 );
 /****************************** WP Functions.me stuff *************************/
 // Enable thumbnails
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size(300, 300, true); // Normal post thumbnails
+set_post_thumbnail_size(300, 300); 
+// Normal post thumbnails
 
 // Create custom sizes
 // This is then pulled through to your theme useing the_post_thumbnail('custombig');
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size('customsmall', 300, 200, true); //narrow column
-	add_image_size('custombig', 400, 500, true); //wide column
-	add_image_size('customRatio', 0, 0, true);
+	add_image_size('customsmall', 500, 500); //narrow column
+	add_image_size('custombig', 960, 960); //wide column
+	add_image_size('customRatio', 0, 0);
 }
 
 // Set a maximum width for Oembedded objects

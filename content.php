@@ -10,7 +10,7 @@
 	<?php if (has_post_thumbnail( $post->ID )): ?>
 		<div id="excerpt" class="front">
 
-			<?php echo get_the_post_thumbnail($post_id, 'customRatio');?>
+			<?php echo get_the_post_thumbnail($postID, 'thumbnail');?>
 		</div>
 			<a href="<?php the_permalink(); ?>" rel="bookmark">
 		<div class="back">

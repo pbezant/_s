@@ -26,7 +26,6 @@
 	jQuery(document).ready(function($){
 		var eTop = $('div.site-branding').offset().top; //get the offset top of the element
 		//console.log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
-
 		$(window).scroll(function() { //when window is scrolled
 		   // console.log(eTop  - $(window).scrollTop());
 		    if(eTop  - $(window).scrollTop() < 0){
@@ -35,6 +34,9 @@
 		    else{
 		    	$("#page").removeClass('strip');
 		    }
+		});
+		$('.comment-reply-title').click(function(){
+			$('form.comment-form').slideToggle();
 		});
 	});
 </script>
