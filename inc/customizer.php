@@ -17,9 +17,9 @@ function _s_customize_register( $wp_customize ) {
 
 	$colors = array();
 	$colors[] = array(
-		'slug'=>'main_background_color', 
+		'slug'=>'primary_background_color', 
 		'default' => '#fff',
-		'label' => __('Main Content Background Color', 'Ari')
+		'label' => __('Primary content Background Color', 'Ari')
 	);
 	foreach( $colors as $color ) {
 		// SETTINGS

@@ -111,27 +111,45 @@ body{
 		position: relative;
 		margin-top: 5rem;
 		margin-bottom:$footer-height+3;/*footer:bottom + #secondary:bottom*/
-		padding:1rem 0;
-		background-color:#eee;
-		
+		padding:3rem 0;
+		//background-color:#eee;
+		@include box-shadow(inset 0 2rem 3rem -1rem rgba(0, 0, 0, 0.4), inset 0 -2rem 3rem -1rem rgba(0, 0, 0, 0.4));
 		z-index: 1;
 		main{
 			padding:1em 0;
 			width:100%;
 			min-height: 26rem;
+			margin:1.5rem 0;
+			background-color:rgba(0,0,0,0.4);
+			@include single-box-shadow(rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
+			@include box-shadow(inset rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
 			img{
 				background:#fff;
 			}
 			
 			article, nav.post-navigation, #comments{
-				//background-color:rgba(255, 255, 255, 0.8);
-				background-color:rgba(0,0,0,0.4);
+				max-width: 960px;
+				width:100%;
+				margin:0 auto;
 				padding:1rem 1rem;
 				color:#ddd;
+				//background-color:rgba(255, 255, 255, 0.8);
+				//background-color:rgba(0,0,0,0.4);
+				//@include single-box-shadow(rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
+				
 			}
+			nav.post-navigation{}
 			#comments{
+				h3.comment-reply-title{
+					cursor: pointer;
+					color:#111;
+					&:hover{
+						color: #ddd;
+					}
+				}
 				form.comment-form{
 					display: none;
+					
 				}
 			}
 
@@ -162,7 +180,7 @@ body{
 	}
 }
 
-body.home article, body.gallery img{
+body.home #primary main article, body.gallery img{
 	max-width:48%;
 	min-width: 15rem;
 	margin:0.5%;
@@ -177,8 +195,10 @@ body.home article, body.gallery img{
 //body.single-format-gallery
 body.home {
 	#primary{
+		
 		main.site-main{
-			
+			@include single-box-shadow(transparent);
+			background-color:transparent;	
 			article{
 				padding:0 inherit;
 				background-color:transparent;

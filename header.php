@@ -17,9 +17,11 @@
 
 <?php wp_head(); ?>
 <?php
-	$main_background_color = get_option('main_background_color');
+	$primary_background_color = get_option('primary_background_color');
 ?>
-
+<style>
+#primary{background-color:<?php echo $primary_background_color ?>;}
+</style>
 </head>
 
 <body <?php body_class(); ?>>

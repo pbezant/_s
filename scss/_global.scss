@@ -2,6 +2,7 @@
 $ltblue : #ADD8E6;
 $dkblue:#3a3ad1;
 $yellow: #c1be00;
+$milonga: 'Milonga', cursive;
 @import "compass";
 @import url("http://fonts.googleapis.com/css?family=Milonga");
 
@@ -25,8 +26,9 @@ $yellow: #c1be00;
   }
  
 
-  h1,h2,h3,h4,h5,h6, nav.main-navigation{
-    font-family: 'Milonga', cursive;
+  h1,h2,h3,h4,h5,h6, nav.main-navigation, nav.post-navigation{
+    font-family: $milonga;
+    @include single-transition(all, 0.4s, linear);
   	//margin:0;
   }
   a{
