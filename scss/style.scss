@@ -32,22 +32,31 @@ body{
 		nav{
 			position:fixed;
 			right: 1px;
-
+			top:4rem;
 			&.main-navigation{
 				text-align: right;
 				float:right;
 				width:auto;
 				margin:0 1.5rem;
-				@include single-transition(all, 0.4s, linear);
+				
 				ul.nav-menu{
 					@include horizontal-list-container;
 					> li{
 						@include horizontal-list-item(0.5rem, right);
+						@include single-transition(all, 0.4s, linear);
+						font-size: 1.3rem;
+						@include breakpoint(medium){
+							font-size:20rem;
+						}
 						a{
 							color: inherit;
+
 						}
 					}
+
+
 				}
+				
 
 			}
 		}
@@ -55,7 +64,7 @@ body{
 			position:fixed;
 			float:left;
 			h1, h2{
-				@include single-transition(all, 0.4s, linear);
+				
 				@include single-text-shadow(1px 1px 10px #777777);
 			}
 			h1{
@@ -74,6 +83,9 @@ body{
 	}
 	#page{
 		&.strip{
+			nav.main-navigation{
+				top:3rem;
+			}
 			.menu-toggle,
 			.main-navigation.toggled .nav-menu {
 				display: block;
@@ -81,6 +93,10 @@ body{
 
 			.main-navigation ul {
 				display: none;
+				li{
+					font-size: 1.3rem;
+				}
+				
 			}
 		}
 		&:not(.strip){
@@ -116,7 +132,7 @@ body{
 		@include box-shadow(inset 0 2rem 3rem -1rem rgba(0, 0, 0, 0.4), inset 0 -2rem 3rem -1rem rgba(0, 0, 0, 0.4));
 		z-index: 1;
 		main{
-			padding:1em 0;
+			padding:0;
 			width:100%;
 			min-height: 26rem;
 			margin:1.5rem 0;
@@ -138,9 +154,22 @@ body{
 				//@include single-box-shadow(rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
 				
 			}
-			nav.post-navigation{}
+			article{
+				header{
+					h1.entry-title{
+						font-size:2em;
+					}
+					.entry-meta{
+						padding-left:1.5em;
+						.byline{
+							display: none;
+						}
+					}
+				}
+			}
 			#comments{
 				h3.comment-reply-title{
+					@include single-transition(all, 0.4s, linear);
 					cursor: pointer;
 					color:#111;
 					&:hover{
@@ -195,7 +224,7 @@ body.home #primary main article, body.gallery img{
 //body.single-format-gallery
 body.home {
 	#primary{
-		
+		padding:1.5rem 0;
 		main.site-main{
 			@include single-box-shadow(transparent);
 			background-color:transparent;	
@@ -239,6 +268,14 @@ body.home {
 	/* entire container, keeps perspective */
 	.flip-container {
 		@include perspective(1000);
+		a{
+			text-decoration:none;
+			color:inherit;
+			font:inherit;
+			&:hover{
+				color: inherit;
+			}
+		}
 	}
 		/* flip the pane when hovered */
 		.flip-container:hover .flipper, .flip-container.hover .flipper {
@@ -267,15 +304,7 @@ body.home {
 		left: 0;
 		@include backface-visibility(hidden);
 	}
-	a{
-		text-decoration:none;
-		color:inherit;
-		font:inherit;
-		&:hover{
-			color: inherit;
-		}
-
-	}
+	
 	/* front pane, placed above back */
 	#excerpt {
 		display: block;

@@ -11,10 +11,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
 			<?php get_template_part( 'content', 'single' ); ?>
-
-			<?php _s_content_nav( 'nav-below' ); ?>
+			
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
@@ -22,6 +20,8 @@ get_header(); ?>
 					comments_template();
 			?>
 
+
+			<?php _s_content_nav( 'nav-below' ); ?>
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
