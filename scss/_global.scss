@@ -6,24 +6,24 @@ $milonga: 'Milonga', cursive;
 @import "compass";
 @import url("http://fonts.googleapis.com/css?family=Milonga");
 
+ html { 
+    font-size: 62.5%; 
+  }
 
 @mixin breakpoint($point) {
   @if $point == large {
-    @media (min-width: 60rem) { @content; }
+    @media screen and (min-width: 60rem) { @content; }
   }
   @else if $point == medium { /* If you change the min-width be sure to change it in header.php above header block */
-    @media (min-width:60rem) { @content; }
+    @media screen and (min-width: 37.5em) { @content; }
   }
   @else if $point == small {
-    @media (min-width: 19.5em)  { @content; }
+    @media screen and (min-width: 19.5em)  { @content; }
   }
 }
 
-@media screen{
   * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-  html { 
-    font-size: 62.5%; 
-  }
+ 
   a{
     color:inherit;
     text-decoration: none;
@@ -58,7 +58,6 @@ $milonga: 'Milonga', cursive;
   	min-width:340px;
   	margin:0 auto;
   }
-}
 /* Images */
 img{
   max-width: 97.5%; /* Fluid images for posts, comments, and widgets */

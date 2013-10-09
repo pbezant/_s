@@ -32,13 +32,11 @@ body{
 		nav{
 			position:fixed;
 			right: 1px;
-			top:4rem;
+			margin:1.5rem;
 			&.main-navigation{
 				text-align: right;
 				float:right;
 				width:auto;
-				margin:0 1.5rem;
-				
 				ul.nav-menu{
 					@include horizontal-list-container;
 					> li{
@@ -46,7 +44,7 @@ body{
 						@include single-transition(all, 0.4s, linear);
 						font-size: 1.3rem;
 						@include breakpoint(medium){
-							font-size:20rem;
+							font-size:2rem;
 						}
 						a{
 							color: inherit;
@@ -80,7 +78,7 @@ body{
 	#page{
 		&.strip{
 			nav.main-navigation{
-				top:3rem;
+				margin-top:0;
 			}
 			.menu-toggle,
 			.main-navigation.toggled .nav-menu {
