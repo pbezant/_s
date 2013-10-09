@@ -25,29 +25,30 @@ $milonga: 'Milonga', cursive;
     font-size: 62.5%; 
   }
   a{
+    color:inherit;
     text-decoration: none;
+    @include single-transition(all, 0.4s, linear);
+    &:hover{
+      color:#ddd;
+    }
+    &:visited{
+      color:inherit;
+    }
   }
 
   h1,h2,h3,h4,h5,h6{
     @include single-transition(all, 0.4s, linear);
     font-family: $milonga;
-    
-  	//margin:0;
   }
 
   nav{
     a, a:visited{
       font-family: $milonga;
       color:#111;
-      @include single-transition(all, 0.4s, linear);
+      
       &:hover{
         color:#ddd;
       }
-    }
-  }
-  a{
-    &:visited{
-      color:inherit;
     }
   }
   body{
