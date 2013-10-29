@@ -31,7 +31,7 @@ body{
 		
 		nav{
 			position:fixed;
-			right: 1px;
+			right: 3.5%;
 			margin:1.5rem;
 			&.main-navigation{
 				text-align: right;
@@ -160,6 +160,9 @@ body{
 						}
 					}
 				}
+				footer{
+					display: none;
+				}
 			}
 			#comments{
 				h3.comment-reply-title{
@@ -171,7 +174,7 @@ body{
 					}
 				}
 				form.comment-form{
-					display: none;
+					//display: none;
 					
 				}
 			}
@@ -225,11 +228,13 @@ body.home {
 			article{
 				padding:0 inherit;
 				background-color:transparent;
+				
 				h1{
-					position:absolute;
+					/*position:absolute;
 					top:30%;
 					display: block;
 					width:100%;
+					*/
 					text-align: center;
 					line-height: 1em;
 					font-size:3rem;
@@ -237,15 +242,21 @@ body.home {
 					@include force-wrap;
 				}
 				.front,.back{
+					@include display-box;
+					@include box-pack(center);
+					@include box-align(center);
 					border:1px solid #333;
 					background-color:#777;
 					overflow: hidden;
 				}
 				#excerpt{
+
 					font-size: 1.5rem;
 					line-height: 1.5em;
+
 					img{
 						display: block;
+						max-width: 100%;
 						width:100%;
 						margin:0 auto;
 					}

@@ -51,9 +51,11 @@
 		    	$("#page").removeClass('strip');
 		    }
 		});
+		/*
 		$('.comment-reply-title').click(function(){
 			$('form.comment-form').slideToggle();
 		});
+		*/
 	});
 </script>
 
@@ -61,17 +63,19 @@
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.isotope.min.js" type="text/javascript"></script>
 	<script>
 		jQuery(document).ready(function($){
-			$('article').click(function(){
+			/*$('article').click(function(){
 				$(this).addClass('flip');
 				setTimeout(function(){jQuery('article').removeClass('flip');}, 3000);
-			});
+			});*/
 			var $container = $('main.site-main');
-			$container.isotope({
-		  		itemSelector : 'article',
-		  		masonry: {
-	    			columnWidth: 5
-	  			}
-			});
+			$(window).load(function(){
+				$container.isotope({
+			  		itemSelector : 'article',
+			  		masonry: {
+		    			columnWidth: 5
+		  			}
+				});
+			});		
 			$('#cat-nav ul a').click(function(){
 				$('#cat-nav ul li').removeClass('active');
 				$(this).addClass('active');
