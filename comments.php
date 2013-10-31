@@ -47,7 +47,7 @@ if ( post_password_required() )
 				 * define _s_comment() and that will be used instead.
 				 * See _s_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => '_s_comment' ) );
+				wp_list_comments( array( 'callback' => '_s_comment_jetpack' ) );
 			?>
 		</ol><!-- .comment-list -->
 

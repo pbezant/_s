@@ -700,21 +700,41 @@ object {
   word-wrap: break-word;
 }
 
+/* line 551, ../scss/reset.scss */
+ol.comment-list li.comment {
+  margin: 1em 0;
+  overflow: hidden;
+  list-style-type: none;
+}
+
+/* line 556, ../scss/reset.scss */
+li.comment .comment-author.vcard img {
+  float: left;
+  margin-right: 1em;
+}
+
+/* line 560, ../scss/reset.scss */
+ol.comment-list li.comment p {
+  float: left;
+  clear: both;
+  margin: 0.5em 0;
+}
+
 /* =Widgets
 ----------------------------------------------- */
-/* line 555, ../scss/reset.scss */
+/* line 569, ../scss/reset.scss */
 .widget {
   margin: 0 0 1.5em;
 }
 
 /* Make sure select elements fit in widgets */
-/* line 560, ../scss/reset.scss */
+/* line 574, ../scss/reset.scss */
 .widget select {
   max-width: 100%;
 }
 
 /* Search widget */
-/* line 565, ../scss/reset.scss */
+/* line 579, ../scss/reset.scss */
 .widget_search .search-submit {
   display: none;
 }
@@ -722,7 +742,7 @@ object {
 /* =Infinite Scroll
 ----------------------------------------------- */
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-/* line 574, ../scss/reset.scss */
+/* line 588, ../scss/reset.scss */
 .infinite-scroll .paging-navigation,
 .infinite-scroll.neverending .site-footer {
   /* Theme Footer (when set to scrolling) */
@@ -730,7 +750,7 @@ object {
 }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-/* line 579, ../scss/reset.scss */
+/* line 593, ../scss/reset.scss */
 .infinity-end.neverending .site-footer {
   display: block;
 }

@@ -548,6 +548,20 @@ object {
 }
 .bypostauthor {
 }
+ol.comment-list li.comment{
+	margin: 1em 0;
+	overflow: hidden;
+	list-style-type: none;
+}
+li.comment .comment-author.vcard img{
+	float:left;
+	margin-right:1em;
+}
+ol.comment-list li.comment p{
+	float: left;
+	clear: both;
+	margin: 0.5em 0;
+}
 
 /* =Widgets
 ----------------------------------------------- */

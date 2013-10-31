@@ -12,18 +12,20 @@
 
 			<?php echo get_the_post_thumbnail($postID, 'thumbnail');?>
 		</div>
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
-		<div class="back">
+		<a href="<?php the_permalink(); ?>" rel="bookmark">	
+		<div class="back title">
 			<h1 class="entry-title"><?php the_title();?></h1>
 		</div></a>
 	<?php else: ?>
-		<div  class="front">
+		<div  class="front title">
 			<h1 class="entry-title"><?php the_title();?></h1>
 		</div>
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
+			
 		<div id="excerpt" class="back">
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
 			<?php the_excerpt('excerpt');?>
-		</div></a>
+			</a>
+		</div>
 		
 		
 	<?php endif; ?>

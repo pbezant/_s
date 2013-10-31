@@ -109,6 +109,18 @@ function _s_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for _s_comment()
 
+if ( ! function_exists( '_s_comment_jetpack' ) ) :
+	function _s_comment_jetpack(){ 
+		 if ( have_comments() ) : 
+			wp_list_comments( array(
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 74,
+			) );
+		endif;		
+	}
+endif;
+
 if ( ! function_exists( '_s_the_attached_image' ) ) :
 /**
  * Prints the attached image with a link to the next attached image.
