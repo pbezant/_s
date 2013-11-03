@@ -3,38 +3,39 @@
  * @package _s
  */
 ?>
+
 <?php if (is_home()):?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 		<div class='flipper'>
-	<?php if (has_post_thumbnail( $post->ID )): ?>
-		<div id="excerpt" class="front">
+		<?php if (has_post_thumbnail( $post->ID )): ?>
+			<div id="excerpt" class="front">
 
-			<?php echo get_the_post_thumbnail($postID, 'thumbnail');?>
-		</div>
-		<a href="<?php the_permalink(); ?>" rel="bookmark">	
-		<div class="back title">
-			<h1 class="entry-title"><?php the_title();?></h1>
-		</div></a>
-	<?php else: ?>
-		<div  class="front title">
-			<h1 class="entry-title"><?php the_title();?></h1>
-		</div>
+				<?php echo get_the_post_thumbnail($postID, 'thumbnail');?>
+			</div>
+			<a href="<?php the_permalink(); ?>" rel="bookmark">	
+			<div class="back title">
+				<h1 class="entry-title"><?php the_title();?></h1>
+			</div></a>
+		<?php else: ?>
+			<div  class="front title">
+				<h1 class="entry-title"><?php the_title();?></h1>
+			</div>
+				
+			<div id="excerpt" class="back">
+				<a href="<?php the_permalink(); ?>" rel="bookmark">
+				<?php the_excerpt('excerpt');?>
+				</a>
+			</div>
 			
-		<div id="excerpt" class="back">
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
-			<?php the_excerpt('excerpt');?>
-			</a>
+			
+		<?php endif; ?>
 		</div>
-		
-		
-	<?php endif; ?>
 	</div>
-		</div>
 </article>
 
-<?php else:?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php else: ?>
+<article id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
@@ -91,4 +92,4 @@
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
-<?php endif; ?>
+<?php endif;?>
