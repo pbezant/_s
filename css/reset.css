@@ -681,13 +681,13 @@ object {
 }
 
 /* line 533, ../scss/reset.scss */
-[class*="navigation"] .nav-previous {
+[class*="navigation"] .nav-next {
   float: left;
   width: 50%;
 }
 
 /* line 537, ../scss/reset.scss */
-[class*="navigation"] .nav-next {
+[class*="navigation"] .nav-previous {
   float: right;
   text-align: right;
   width: 50%;
