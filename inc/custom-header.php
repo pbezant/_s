@@ -28,7 +28,7 @@
 function _s_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( '_s_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '333',
+		'default-text-color'     => '#000',
 		'width'                  => 1280,
 		'height'                 => 170,
 		'flex-height'            => true,
@@ -69,12 +69,9 @@ function _s_header_style() {
 		// If the user has set a custom color for the text use that
 		else :
 	?>
-		.site-title a,
-		.site-description,
-		.main-navigation {
+		header.site-header, nav{
 			color: #<?php echo $header_text_color; ?>;
 		}
-
 	<?php endif; ?>
 	</style>
 	<?php

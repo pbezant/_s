@@ -40,15 +40,16 @@
 </script>
 <script>
 	jQuery(document).ready(function($){
+		$("#page").addClass('strip');
 		var eTop = $('div.site-branding').offset().top; //get the offset top of the element
 		//console.log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
 		$(window).scroll(function() { //when window is scrolled
 		   // console.log(eTop  - $(window).scrollTop());
 		    if(eTop  - $(window).scrollTop() < 0){
-		    	$("#page").addClass('strip');
+		    	$("#page").removeClass('strip');
 		    }
 		    else{
-		    	$("#page").removeClass('strip');
+		    	$("#page").addClass('strip');
 		    }
 		});
 		/*

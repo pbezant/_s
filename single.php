@@ -21,10 +21,11 @@ get_header(); ?>
 			?>
 
 
-			<?php _s_content_nav( 'nav-below' ); ?>
+			
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
+		<?php _s_content_nav( 'nav-below' ); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

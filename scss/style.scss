@@ -5,10 +5,12 @@
 $header-height: 18rem;
 $footer-height: $header-height;
 .header-overlay, #secondary.widget-area, footer.site-footer{
-		@include background(image-url("noisy-texture.png"));
+		//@include background(image-url("noisy-texture.png"));
 }
-#primary, header.site-header{
-	@include single-box-shadow(rgba(51, 51, 51, 0.5), 0, 0rem, 1.5rem, 1rem, false);
+header.site-header, #primary{
+	//@include single-box-shadow(rgba(51, 51, 51, 0.5), 0, 0rem, 1.5rem, 1rem, true);
+	//@include box-shadow(0 0.5rem 1rem 0rem rgba(0, 0, 0, 0.6), inset 0 -1rem 1.5rem 0rem rgba(0, 0, 0, 0.4));
+	@include box-shadow(0 0.5rem 1rem 0rem #222);
 }
 
 body{
@@ -17,91 +19,69 @@ body{
 		height: 3.5em;
 		width:100%;
 		position:fixed;
-		z-index: 2;
+		z-index: 3;
 		background-attachment: scroll;
 		.header-overlay{
-			background-color:rgba(255, 255, 255, 0.15);
-			position:absolute;
-			top:0;
-			left:0;
-			display: block;
-			width:100%;
-			height: 100%;
+		//	background-color:rgba(255, 255, 255, 0.5);
 		}
-		
+
 		nav{
-			position:fixed;
-			right: 3.5%;
-			margin:1.5rem;
+			position:relative;
+			right: 1em;
 			&.main-navigation{
-				text-align: right;
+				text-align:right;
 				float:right;
 				width:auto;
+				margin-top:0.1rem;
 				ul.nav-menu{
 					@include horizontal-list-container;
+					overflow: visible;
 					> li{
-						@include horizontal-list-item(0.5rem, right);
+						display: block;
+						@include horizontal-list-item(0.5rem, left);
 						@include single-transition(all, 0.4s, linear);
-						font-size: 1.2em;
+						font-size: 1.4rem;
+						text-align: right;
 						@include breakpoint(medium){
-							font-size:1.5em;
-						}
-						a{
-							color: inherit;
-
+							font-size:2rem;
 						}
 					}
 				}
 			}
 		}
+		
 		.site-branding{
-			position:fixed;
+			position:relative;
+			left:1em;
 			float:left;
+			
 			h1, h2{
 				
-				@include single-text-shadow(1px 1px 10px #777777);
+				
 			}
 			h1{
 				font-size: 2.2rem;
-				a{
-					color:none;
-					text-decoration: none;
-				}
 			}
 			h2{
 				display: none;
 			}
 
 		}
+		nav.main-navigation, .site-branding{
+			@include text-shadow(0em 0em 3em #fff);
+		}
 		
 	}
 	#page{
 		&.strip{
-			nav.main-navigation{
-				margin-top:0;
-			}
-			.menu-toggle,
-			.main-navigation.toggled .nav-menu {
-				display: block;
-			}
-
-			.main-navigation ul {
-				display: none;
-				li{
-					font-size: 1.3rem;
-				}
-				
-			}
-		}
-		&:not(.strip){
 			header.site-header{
 				position:relative;
-				z-index: 1;
+				z-index: 2;
 				min-height: 17rem;
+				background-attachment:fixed;
 				.site-branding{
 					position: absolute;
 					top: 6rem;
-					margin:1.5rem;
 					text-align: center;
 					h1{
 						font-size: 4rem;
@@ -111,83 +91,87 @@ body{
 						font-size: 2rem;
 					}
 				}
+				nav{
+					position:fixed;
+				}
 			}
 			#primary{
 				margin-top:0 !important;
 			}
-		} 
+		}  
 	}
+
+	
+
 	#primary{
 		position: relative;
 		margin-top: 5rem;
 		margin-bottom:$footer-height+3;/*footer:bottom + #secondary:bottom*/
-		padding:3rem 0;
+		padding:3rem 0 2rem;
 		//background-color:#eee;
-		@include box-shadow(inset 0 2rem 3rem -1rem rgba(0, 0, 0, 0.4), inset 0 -2rem 3rem -1rem rgba(0, 0, 0, 0.4));
 		z-index: 1;
-		main{
-			padding:0;
-			width:100%;
-			min-height: 26rem;
-			margin:1.5rem 0;
-			background-color:rgba(0,0,0,0.4);
-			@include single-box-shadow(rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
-			@include box-shadow(inset rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
-			img{
-				background:#fff;
-			}
-			
-			article, nav.post-navigation, #comments{
-				max-width: 960px;
-				width:100%;
-				margin:0 auto;
-				padding:1rem 1rem;
-				color:#ddd;
-				//background-color:rgba(255, 255, 255, 0.8);
-				//background-color:rgba(0,0,0,0.4);
-				//@include single-box-shadow(rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
-				
-			}
-			article{
-				header{
-					h1.entry-title{
-						font-size:2em;
-					}
-					.entry-meta{
-						padding-left:1.5em;
-						.byline{
-							display: none;
+
+			main{
+				padding:0;
+				//width:100%;
+				min-height: 26rem;
+				margin:1.5rem 0.5rem;
+				background-color:rgba(0,0,0,0.4);
+				@include single-box-shadow(rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
+				@include box-shadow(inset rgba(0,0,0,0.4), 0, 0rem, 1rem, 1rem, false);
+				img{
+					background:#fff;
+				}
+				article, nav.post-navigation, #comments{
+					max-width: 960px;
+					width:100%;
+					margin:0 auto;
+					padding:1rem 1rem;
+					color:#ddd;
+				}
+				article{
+					header{
+						h1.entry-title{
+							font-size:2em;
+						}
+						.entry-meta{
+							padding-left:1.5em;
+							.byline{
+								display: none;
+							}
 						}
 					}
-				}
-				div.sharedaddy{
-					margin:1.5rem 0;
-				}
-				footer{
-					display: none;
-				}
-			}
-			#comments{
-				h3.comment-reply-title{
-					@include single-transition(all, 0.4s, linear);
-					cursor: pointer;
-					color:#111;
-					border-bottom:1px solid #444;
-					margin: 0.5em 0;
-					padding-bottom:0.2em;
-
-					&:hover{
-						color: #ddd;
+					div.sharedaddy{
+						margin:1.5rem 0;
+					}
+					footer{
+						display: none;
 					}
 				}
-				form.comment-form{
-					margin-left:1.5em;
-					//display: none;
-					
+				#comments{
+					h3.comment-reply-title{
+						@include single-transition(all, 0.4s, linear);
+						color:#111;
+						border-bottom:1px solid #DDD;
+						border-bottom:1px solid rgba(0, 0, 0, 0.13);
+						margin: 0.5em 0;
+						padding-bottom:0.2em;
+						//cursor:hand;
+						&:hover{
+							color: #ddd;
+						}
+					}
+					form.comment-form{
+						margin-left:1.5em;
+						//display: none;
+						
+					}
 				}
 			}
-
-		}
+			nav.post-navigation{
+				margin:2em 0 0;
+			}
+		
 	}
 
 	#secondary.widget-area, footer.site-footer{
@@ -236,8 +220,9 @@ body.home {
 			@include single-box-shadow(transparent);
 			background-color:transparent;	
 			article{
-				padding:0 inherit;
+				padding:0;
 				background-color:transparent;
+				
 				
 				h1{
 					/*position:absolute;
@@ -253,7 +238,7 @@ body.home {
 				}
 				.front,.back{
 					
-					border:1px solid #333;
+					//border:1px solid #333;
 					background-color:#777;
 					overflow: hidden;
 					&.title{
@@ -281,109 +266,11 @@ body.home {
 				}
 
 			}
-		}
-	}
-}
-
-	/* entire container, keeps perspective */
-	.flip-container {
-		@include perspective(1000);
-		a{
-			text-decoration:none;
-			color:inherit;
-			font:inherit;
-			&:hover{
-				color: inherit;
+			.front, .back{
+			//	@include border-radius(1rem);
 			}
 		}
 	}
-		/* flip the pane when hovered */
-		.flip-container:hover .flipper, .flip-container.hover .flipper {
-			@include transform(rotateY(180deg));
-		}
+}
 
-	.flip-container, .front, .back {
-		width: 100%;
-		height: 100%;
-	}
-	/* flip speed goes here */
-	.flipper {
-		transition: 0.6s;
-		@include transform-style(preserve-3d);
-		position: relative;
-
-	}
-	.front{
-		z-index: 2;
-	}
-	.back{
-		@include transform(rotateY(180deg)); /* back, initially hidden pane */
-		a{
-			width:100%;
-			height: 100%;
-		}
-	}
-	.back, .front{
-		position: absolute;
-		top: 0;
-		left: 0;
-		@include backface-visibility(hidden);
-	}
 	
-	/* front pane, placed above back */
-	#excerpt {
-		display: block;
-		width:100%;
-		position: relative;
-		
-	}
-/**** Isotope Filtering ****/
-
-.isotope-item {
-  z-index: 2;
-}
-
-.isotope-hidden.isotope-item {
-  pointer-events: none;
-  z-index: 1;
-}
-
-/**** Isotope CSS3 transitions ****/
-
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:      -o-transform, opacity;
-          transition-property:         transform, opacity;
-}
-
-/**** disabling Isotope CSS3 transitions ****/
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-      -ms-transition-duration: 0s;
-       -o-transition-duration: 0s;
-          transition-duration: 0s;
-}
-/*** End Isotope ***/

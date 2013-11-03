@@ -28,36 +28,26 @@ body{
   color: #444;
   min-width:340px;
   margin:0 auto;
-}
+
 
 *{-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-a{
-  color:inherit;
-  text-decoration: none;
-  @include single-transition(all, 0.4s, linear);
-  &:hover{
-    color:#ddd;
-  }
-  &:visited{
+
+  a{
     color:inherit;
-  }
-}
-
-h1,h2,h3,h4,h5,h6{
-  @include single-transition(all, 0.4s, linear);
-  font-family: $milonga;
-}
-
-nav{
-  a, a:visited{
-    font-family: $milonga;
-    color:#111;
-    
-    &:hover{
-      color:#ddd;
+    text-decoration: none;
+    @include single-transition(all, 0.4s, linear);
+     &:visited{
+      color:inherit;
     }
+    &:hover{
+      color:#eee;
+    }
+   
   }
+}
+h1,h2,h3,h4,h5,h6, nav{
+  font-family: $milonga;
 }
   
 /* Images */
@@ -77,3 +67,104 @@ img{
     width:34px;
   }
 }
+
+/* entire container, keeps perspective */
+  .flip-container {
+    @include perspective(1000);
+    a{
+      text-decoration:none;
+      color:inherit;
+      font:inherit;
+      &:hover{
+        color: inherit;
+      }
+    }
+  }
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+      @include transform(rotateY(180deg));
+    }
+
+  .flip-container, .front, .back {
+    width: 100%;
+    height: 100%;
+  }
+  /* flip speed goes here */
+  .flipper {
+    transition: 0.6s;
+    @include transform-style(preserve-3d);
+    position: relative;
+
+  }
+  .front{
+    z-index: 2;
+  }
+  .back{
+    @include transform(rotateY(180deg)); /* back, initially hidden pane */
+    a{
+      width:100%;
+      height: 100%;
+    }
+  }
+  .back, .front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include backface-visibility(hidden);
+  }
+  
+  /* front pane, placed above back */
+  #excerpt {
+    display: block;
+    position:relative;
+  }
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+/*** End Isotope ***/
