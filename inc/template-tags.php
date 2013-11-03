@@ -32,20 +32,17 @@ function _s_content_nav( $nav_id ) {
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
-
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 		<?php previous_post_link( '<div class="nav-previous">%link</div>', '%title<span class="meta-nav">' . _x( '&rarr;', 'Previous post link', '_s' ) . '</span>' ); ?>
 		<?php next_post_link( '<div class="nav-next">%link</div>', ' <span class="meta-nav">' . _x( '&larr;', 'Next post link', '_s' ) . '</span> %title' ); ?>
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', '_s' ) ); ?></div>
-		<?php endif; ?>
-
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', '_s' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts ', '_s' ) ); ?></div>
+		<?php endif; ?>
+		<?php if ( get_next_posts_link() ) : ?>
+		<div class="nav-previous"><?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>', '_s' ) ); ?></div>
 		<?php endif; ?>
 	<?php endif; ?>
-
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
