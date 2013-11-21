@@ -69,7 +69,7 @@ body{
 
 		}
 		nav.main-navigation, .site-branding{
-			@include text-shadow(0em 0em 1em #fff);
+			@include text-shadow(0em 0em 0.5em #fff);
 		}
 		
 	}
