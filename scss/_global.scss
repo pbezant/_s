@@ -12,7 +12,7 @@ $milonga: 'Milonga', cursive;
 
 @mixin breakpoint($point) {
   @if $point == large {
-    @media screen and (min-width: 60rem) { @content; }
+    @media screen and (min-width: 70rem) { @content; }
   }
   @else if $point == medium { /* If you change the min-width be sure to change it in header.php above header block */
     @media screen and (min-width: 37.5em) { @content; }

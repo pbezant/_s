@@ -80,7 +80,11 @@ body{
 				z-index: 2;
 				min-height: 17rem;
 				background-attachment:fixed;
-				background-size:initial;
+					background-size:auto;
+				@include breakpoint(large){
+					background-size:100%;	
+				}
+				
 				.site-branding{
 					position: absolute;
 					top: 6rem;
@@ -236,7 +240,6 @@ body.home {
 					line-height: 1em;
 					font-size:3rem;
 					text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-					@include force-wrap;
 				}
 				.front,.back{
 					
