@@ -35,16 +35,17 @@ body{
 
   a{
     color:inherit;
-    text-decoration: none;
     @include single-transition(all, 0.4s, linear);
      &:visited{
       color:inherit;
     }
     &:hover{
       color:#eee;
+      opacity: 0.75;
     }
    
   }
+ 
 }
 h1,h2,h3,h4,h5,h6, nav{
   font-family: $milonga;
@@ -85,7 +86,7 @@ img{
       @include transform(rotateY(180deg));
     }
 
-  .flip-container, .front, .back {
+  .flip-container, .front, .back, .front a, .back a{
     width: 100%;
     height: 100%;
   }

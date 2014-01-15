@@ -13,10 +13,12 @@
 
 				<?php echo get_the_post_thumbnail($postID, 'thumbnail');?>
 			</div>
-			<a href="<?php the_permalink(); ?>" rel="bookmark">	
+			
 			<div class="back title">
+				<a href="<?php the_permalink(); ?>" rel="bookmark">	
 				<h1 class="entry-title"><?php the_title();?></h1>
-			</div></a>
+				</a>
+			</div>
 		<?php else: ?>
 			<div  class="front title">
 				<h1 class="entry-title"><?php the_title();?></h1>
